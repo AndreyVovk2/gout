@@ -1,0 +1,16 @@
+<ion-header>
+  <custom-header [title]="'עריכת תפריט'" [translate]="'menu-item.header'"></custom-header>
+</ion-header>
+
+<ion-content>
+  <custom-photo (changePhoto)="getMenuPhoto($event)"></custom-photo>
+  <div class="info-block">
+    <div class="name">
+      <ion-input type="text" dir="rtl" [(ngModel)]="menuCategory.name" maxlength="25"></ion-input>
+      <p class="inscription-business inscription">{{'menu-item.title' | translate}}</p>
+    </div>
+  </div>
+  <div class="button-block">
+    <button (click)="createMenuCategory()">{{'menu-item.create' | translate}}</button>
+  </div>
+</ion-content>

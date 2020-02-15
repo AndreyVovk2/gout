@@ -1,0 +1,8 @@
+<ion-header>
+  <custom-header [title]="'favorites.header' | translate"></custom-header>
+</ion-header>
+
+
+<ion-content>
+  <main-event *ngFor="let event of favorites" (save)="reloadFavorites($event)" [event]="event"></main-event>
+</ion-content>

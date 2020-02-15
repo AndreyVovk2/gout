@@ -1,0 +1,28 @@
+<ion-header>
+  <custom-header [title]="names.businessName" [subtitle]="names.lineName"></custom-header>
+</ion-header>
+<ion-content>
+  <div class="post-list">
+    <div class="post-block" (click)="openDetails(post)" *ngFor="let post of myPosts">
+      <div class="creator-avatar">
+        <img [src]="post.creator.avatar_src">
+      </div>
+      <div class="text-block">
+        <p dir="rtl" class="title">{{post.title}}</p>
+        <p dir="rtl" class="creator-name">{{post.creator.name}}</p>
+        <div class="people">
+          <div class="column-text">
+            <p class="up-text">נמצאים</p>
+            <p class="count">0</p>
+          </div>
+          <img src="assets/icon/friends-blue.png">
+        </div>
+      </div>
+      <div class="photo">
+        <img *ngIf="post.picture !== null" [src]="post.picture">
+        <img *ngIf="post.picture === null" [src]="post.line.avatar">
+      </div>
+    </div>
+      <img class="add-button" *ngIf="state != 'businessHostes'" src="assets/icon/add-button.png" (click)="newPost()">
+  </div>
+</ion-content>

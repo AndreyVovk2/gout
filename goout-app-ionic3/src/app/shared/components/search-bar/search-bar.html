@@ -1,0 +1,15 @@
+<div class="search-block">
+  <div class="icon-search" (click)="search()">
+    <img src="assets/icon/search.png">
+  </div>
+  <div class="search-input-block">
+    <input class="search-input"
+           id="search-input"
+           type="search"
+           (input)="onInput($event)"
+           [(ngModel)]="searchField">
+  </div>
+  <div class="icon-search-settings" (click)="searchWithSettings()">
+    <img src="assets/icon/search-settings.png">
+  </div>
+</div>

@@ -1,0 +1,33 @@
+input-select {
+  .input-select{
+    .main-block {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      border-bottom: 2px solid color($colors, border);
+      position: relative;
+      .icon-arrow{
+        width: 50%;
+        img{
+          width: 20%;
+        }
+      }
+      .text{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        p{
+          text-align: center;
+          color: color($colors, light)
+        }
+      }
+      .icon-empty{
+        width: 50%;
+      }
+
+    }
+  }
+}

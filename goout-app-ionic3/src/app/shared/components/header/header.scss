@@ -1,0 +1,54 @@
+custom-header {
+  .header{
+    display: flex;
+    height: 6vh;
+    width: 100%;
+    background: color($colors, 'header');
+    justify-content: space-between;
+    align-items: center;
+    .button{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      height: 100%;
+      width: 10%;
+      padding-left: 4vw;
+      img{
+        height: 5vw;
+      }
+    }
+    .title {
+      height: 100%;
+      color: color($colors, 'light');
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .main{
+        font-size: 16px;
+        margin: 0 20px;
+        text-align: center;
+      }
+      .sub{
+        font-size: 3vw;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+    .empty{
+      height: 100%;
+      width: 10%;
+      .empty-icon{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        height: 100%;
+        img{
+          height: 60%;
+          padding-right: 10px;
+        }
+      }
+    }
+  }
+}

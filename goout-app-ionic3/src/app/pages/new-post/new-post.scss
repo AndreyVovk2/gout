@@ -1,0 +1,317 @@
+page-new-post {
+  ion-item {
+    height: 6vw !important;
+  }
+  .two-input-block {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    position: relative;
+    margin-top: 10vw;
+  }
+  .info-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .name {
+      display: block;
+      position: relative;
+      margin-top: 10vw;
+      input {
+        border: none;
+        border-bottom: color($colors, 'border') solid 2px;
+        background-color: transparent;
+        width: 94vw;
+        margin: 0 6vw;
+        height: 7vw;
+        color: white;
+        text-align: center;
+        font-size: 5.5vw;
+        padding-bottom: 2vw;
+      }
+    }
+    .item-block {
+      min-height: inherit !important;
+      .input-wrapper {
+        overflow: visible;
+      }
+      .item-inner {
+        overflow: visible !important;
+        border: none !important;
+      }
+    }
+    .right-icon {
+      width: 7vw;
+      height: 7vw;
+      position: absolute;
+      bottom: 2vw;
+      right: 3vw;
+    }
+    .two-input-item {
+      display: block;
+      position: relative;
+    }
+    .select {
+      width: 2.2vw;
+      height: 4vw;
+      position: absolute;
+    }
+    .gender {
+      width: 5.5vw;
+      height: 5vw;
+      position: absolute;
+      bottom: 1vw;
+      right: 3vw;
+    }
+    .gender-female {
+      width: 4vw;
+      height: 6vw;
+      right: 4vw;
+    }
+  }
+
+  .description {
+    display: block;
+    position: relative;
+    width: 94vw;
+    height: 25vw;
+    margin: 10vw 6vw 3vw 6vw;
+    border: 3px solid #9e2043;
+    padding: 2vw 3vw 5vw 3vw;
+    .up-text {
+      position: absolute;
+      color: white;
+      width: 50%;
+      text-align: right;
+      top: -6vw;
+      font-size: 4vw;
+      right: 1vw;
+    }
+    .description-item {
+      border: none;
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      color: white;
+    }
+    .count {
+      position: absolute;
+      bottom: 0.5vw;
+      left: 2vw;
+      color: #5a4353;
+    }
+  }
+
+  .margin-block {
+    margin-top: 10vw;
+  }
+
+  .buttons-block {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 12vw;
+    top: 260vw;
+    contain: inherit;
+    margin-bottom: 10vw;
+    button {
+      height: 100%;
+      background-color: #f82c53;
+      color: white;
+      padding: 2vw;
+      font-size: 5vw;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      border-radius: 5px;
+      width: 58vw;
+      img {
+        width: 8vw;
+        height: auto;
+      }
+      p {
+        margin-left: 5vw;
+      }
+    }
+  }
+
+  .inscription {
+    color: #6c5264;
+    font-size: 4vw;
+    position: absolute;
+    right: 5vw;
+    bottom: -5vw;
+  }
+  .inscription-name {
+    right: 8vw;
+  }
+
+  ion-slides {
+    position: relative;
+    width: auto;
+    height: auto;
+    ion-slide {
+      width: 160px;
+
+    }
+  }
+
+  .gallery-button {
+    position: relative;
+    background-color: #007aff;
+    left: 60vw;
+    bottom: 5vw;
+    width: 18vw;
+    height: 7vw;
+    font-size: 4vw;
+    color: white;
+    font-weight: 500;
+    border-radius: 20px;
+    padding: 5px 10px;
+    z-index: 50;
+  }
+
+  .add-photo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    right: -55vw;
+    flex-direction: column;
+    width: 40vw;
+    height: 35vw;
+    background-color: #2c1e28;
+    z-index: 50;
+    img {
+      margin-top: 4vw;
+      height: 15vw;
+      width: 15vw;
+    }
+    button {
+      position: relative;
+      background-color: #007aff;
+      top: 5vw;
+      width: 18vw;
+      height: 7vw;
+      font-size: 4vw;
+      color: white;
+      font-weight: 500;
+      border-radius: 20px;
+      padding: 5px 10px;
+      z-index: 50;
+    }
+  }
+
+  .two-input-item {
+    display: block;
+    position: relative;
+    ion-datetime, input, ion-item {
+      margin: 1vw 2vw;
+      border: none;
+      border-bottom: color($colors, 'border') solid 2px;
+      background-color: transparent;
+      width: 45vw;
+      height: 5vw;
+      color: white;
+      text-align: center;
+      font-size: 5vw;
+      ion-select {
+        overflow: visible !important;
+      }
+      .datetime-text {
+        display: block;
+        position: relative;
+        bottom: 3vw;
+      }
+      .select-icon {
+        display: none;
+      }
+      .select-text {
+        overflow: visible;
+        position: relative;
+        width: 10vw;
+        font-size: 5vw;
+        top: -3vw;
+      }
+    }
+
+    .price-view {
+      color: white;
+      position: absolute;
+      left: 10vw;
+      bottom: 0;
+      font-size: 7vw;
+      margin: 0 !important;
+    }
+  }
+  .mode-block {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10vw;
+    .up-text,.down-text {
+      color: white;
+      font-size: 4vw;
+      text-align: right;
+      margin-right: 2vw;
+      padding-right: 1vw;
+      border-right: 2px solid color($colors, border);
+    }
+    .mode-item {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      flex-direction: row;
+      margin: 2.5vw 2vw;
+      p {
+        color: white;
+        font-size: 4vw;
+        margin-right: 2vw;
+      }
+      .checkbox-icon {
+        background-color: transparent!important;
+        border:1px solid color($colors, primary)!important;
+        width: 7vw!important;
+        height: 7vw!important;
+        border-radius: 50%;
+      }
+      .checkbox-checked {
+        background-color: color($colors, primary)!important;
+      }
+      .item-inner {
+        border: none!important;
+      }
+      .checkbox-checked .checkbox-inner{
+        left: 2.5vw !important;
+        top: 1.2vw !important;
+        position: absolute;
+        width: 1.5vw !important;
+        height: 3.5vw !important;
+      }
+    }
+    .radio-block {
+      display: flex;
+      height: 20vw;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      .radio-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color:color($colors, second-text);
+        width: 20vw;
+        height: 7vw;
+        margin: 0 6vw;
+        border-radius: 20px;
+        border: 2px solid color($colors, primary);
+      }
+      .active {
+        background-color: color($colors, primary);
+        color:white;
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+page-modal-message {
+  width: 50px;
+  height: 50px;
+}
+
+.body_modal {
+  width: 200px;
+  height: 200px;
+  margin-left: 24%;
+  margin-top: 54%;
+
+}
+
+.red-button {
+  border-radius: 4px;
+  height: 8vw;
+  width: 40vw;
+  font-size: 4vw;
+  color: white;
+  background-color: #ff2c55 !important;
+  text-transform: none !important;
+  margin: 0.4rem 0.2rem;
+  padding: 0 1em;
+}
+
+.button_closeModal {
+  display: flex;
+  justify-content: center;
+}
+
+.title_modal {
+  color: white;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.red-button {
+  margin-top: 115px;
+  margin-left: 10px;
+}

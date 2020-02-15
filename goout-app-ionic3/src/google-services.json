@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "838494392732",
+    "firebase_url": "https://goout-eb081.firebaseio.com",
+    "project_id": "goout-eb081",
+    "storage_bucket": "goout-eb081.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:905713203431:android:fb0127c99ca8fca2",
+        "android_client_info": {
+          "package_name": "com.goout.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "905713203431-pgrll8555fihn9ocsto36pkqvpms662r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvR5Ol9_Y-E_aSd4OJGioTyRXIqan7Pug"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

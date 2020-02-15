@@ -1,0 +1,108 @@
+<ion-content >
+  <div class="main-wrap">
+    <div class="profile-block">
+
+      <div class="avatar-block">
+        <div class="avatar-image">
+          <img *ngIf="user.avatar_src" [src]="user.avatar_src">
+          <div class="icon-edit" (click)="goTo('profile')">
+            <img src="assets/icon/edit.png">
+          </div>
+        </div>
+      </div>
+
+      <div class="text-name-block">
+        <p>{{user.name}} {{user.lastname}}</p>
+      </div>
+      <div class="neon">
+        <img src="assets/imgs/neon_border.png">
+      </div>
+    </div>
+
+    <div class="settings-block border" [ngClass]="{'no-role' : !business.businessHostes.length && !business.businessPublicist.length}">
+      <div class="block-row" (click)="goTo('business')">
+        <div class="icon">
+          <img src="assets/icon/new_business.png">
+        </div>
+        <div class="text">
+          <p *ngIf="!business.myBusiness.length">{{'menu-right.new-business' | translate}}</p>
+          <p *ngIf="business.myBusiness.length">{{'menu-right.my-business' | translate}}</p>
+        </div>
+      </div>
+
+      <div class="block-row" (click)="goTo('my-events')" *ngIf="business.businessHostes.length">
+        <div class="icon">
+          <img src="assets/icon/my_event.png">
+        </div>
+        <div class="text">
+          <p>{{'menu-right.my-events' | translate}}</p>
+        </div>
+      </div>
+
+      <div class="block-row" (click)="goTo('attached-business')" *ngIf="business.businessPublicist.length">
+        <div class="icon">
+          <img src="assets/icon/my_business.png">
+        </div>
+        <div class="text">
+          <p>{{'menu-right.attached-business' | translate}}</p>
+        </div>
+      </div>
+
+      <div class="block-row" (click)="goTo('privacy-events')">
+        <div class="icon">
+          <img src="assets/icon/my_privacy_event.png">
+        </div>
+        <div class="text">
+          <p>{{'menu-right.my-privacy-events' | translate}}</p>
+        </div>
+      </div>
+
+      <div class="neon">
+        <img src="assets/imgs/neon_border.png">
+      </div>
+    </div>
+
+    <div class="feedback-block border">
+      <div class="block-row" (click)="goTo('favorites')">
+        <div class="icon">
+          <img src="assets/icon/favorite.png">
+        </div>
+        <div class="text">
+          <p>{{'menu-right.favorite' | translate}}</p>
+        </div>
+      </div>
+      <div class="block-row" (click)="goTo('about')">
+        <div class="icon">
+          <img src="assets/icon/about_us.png">
+        </div>
+        <div class="text">
+          <p>{{'menu-right.about' | translate}}</p>
+        </div>
+      </div>
+      <div class="block-row">
+        <div class="icon" id="contact_us">
+          <img src="assets/icon/contact_us.png">
+        </div>
+        <div class="text">
+          <p>{{'menu-right.contact-us' | translate}}</p>
+        </div>
+      </div>
+      <div class="block-row">
+        <div class="icon">
+          <img src="assets/icon/rating_us.png">
+        </div>
+        <div class="text">
+          <p>{{'menu-right.rating-us' | translate}}</p>
+        </div>
+      </div>
+      <div class="block-row" (click)="goTo('terms-of-use')">
+        <div class="icon" id="terms">
+          <img src="assets/icon/terms_and_privacy.png">
+        </div>
+        <div class="text">
+          <p>{{'menu-right.terms-of-use' | translate}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

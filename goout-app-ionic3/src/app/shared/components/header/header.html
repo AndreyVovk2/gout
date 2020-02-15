@@ -1,0 +1,16 @@
+<div class="header">
+    <div class="button" (click)="goBack()">
+      <img src="assets/icon/back.png">
+    </div>
+    <div class="title">
+      <p class="main">{{title}}</p>
+      <p class="sub">{{subtitle}}</p>
+    </div>
+    <div class="empty">
+      <div class="empty-icon" *ngIf="eventId !==0">
+        <img src="assets/icon/favorite-on.png" *ngIf="favorite" (click)="changeIcon()">
+        <img src="assets/icon/favorite-off.png" *ngIf="!favorite" (click)="changeIcon()">
+      </div>
+    </div>
+</div>
+

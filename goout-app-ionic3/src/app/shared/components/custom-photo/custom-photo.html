@@ -1,0 +1,11 @@
+<div class="main-wrap">
+  <div class="photo-block">
+    <img [src]="picture" *ngIf="picture && !photo">
+    <img [src]="photo" *ngIf="photo">
+    <img src="assets/imgs/default-photo.png" *ngIf="!photo || !picture">
+  </div>
+
+  <div class="icon" (click)="addPhoto()">
+    <img src="assets/icon/camera.png">
+  </div>
+</div>

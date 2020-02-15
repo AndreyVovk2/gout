@@ -1,0 +1,63 @@
+page-new-line {
+  ion-item {
+    height: 6vw!important;
+  }
+  .two-input-item ion-item .select-text{
+    left: auto!important;
+    top: auto!important;
+    transform: none!important;
+  }
+  .inscription-line{
+    right: 4vw!important;
+  }
+    .two-input-block {
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      position: relative;
+      margin-top: 10vw;
+      .item-block{
+        min-height: inherit!important;
+        .input-wrapper{
+          overflow: visible;
+        }
+        .item-inner {
+          overflow: visible!important;
+          border: none!important;
+        }
+      }
+      .right-icon{
+        width: 7vw;
+        height: 7vw;
+        position: absolute;
+        bottom: 1vw;
+        right: 3vw;
+      }
+      ion-datetime, input, ion-item{
+        margin: 0 2vw;
+        border: none;
+        border-bottom: color($colors, 'border') solid 2px;
+        background-color: transparent;
+        width: 45vw;
+        height: 5vw;
+        color: white;
+        text-align: center;
+        font-size: 5vw;
+        ion-select {
+          overflow: visible !important;
+        }
+        .datetime-text{
+          display: block;
+          position: relative;
+          bottom: 3vw;
+        }
+        .select-icon {
+          display: none;
+        }
+      }
+    }
+  .button-block {
+    position: absolute;
+    top: 145vw;
+  }
+}

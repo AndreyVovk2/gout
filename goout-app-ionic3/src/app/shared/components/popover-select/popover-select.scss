@@ -1,0 +1,17 @@
+popover-select {
+  background-color: color($colors, header);
+  overflow: scroll;
+  width: 100%;
+  position: absolute;
+  z-index: 5;
+  .popover-block{
+    .repeater{
+      p{
+        padding: 1vw;
+        text-align: center;
+        color: white;
+      }
+    }
+  }
+
+}

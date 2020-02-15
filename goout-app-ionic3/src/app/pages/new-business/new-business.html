@@ -1,0 +1,93 @@
+<ion-header>
+  <custom-header [title]="title"></custom-header>
+</ion-header>
+<ion-content (click)="closePopup()">
+  <custom-photo [picture]="photo" (changePhoto)="getPhoto($event)"></custom-photo>
+  <div class="info-block">
+    <div class="name">
+      <ion-input dir="rtl" type="text" [(ngModel)]="business.name" maxlength="25"></ion-input>
+      <p class="inscription-business inscription">{{'add-business.title' | translate}}</p>
+    </div>
+    <div class="location">
+      <img src="assets/icon/search.png">
+      <input id="pac-input" type="text" placeholder="" [(ngModel)]="business.location">
+      <p class="inscription-location inscription">{{'add-business.location' | translate}}</p>
+    </div>
+    <div class="two-input-block">
+      <div class="two-input-item">
+        <img class="arrow-select" src="assets/icon/arrow-bottom.png">
+        <ion-item class="popup-block" dir="rtl" (click)="showPopup('subBusinessCategory', $event)">
+          <p class="input">{{selectSubCategory}}</p>
+        </ion-item>
+        <div class="popup-select" *ngIf="popups.subBusinessCategory">
+          <p class="popup-item" *ngFor="let subCategory of filterForCategories" (click)="getPopupData(subCategory,'subCategory',$event)">
+            {{subCategory.name}}
+          </p>
+        </div>
+        <p class="inscription">{{'add-business.sub-business-category' | translate}}</p>
+      </div>
+      <div class="two-input-item">
+        <img class="arrow-select" src="assets/icon/arrow-bottom.png">
+        <ion-item class="popup-block" dir="rtl" (click)="showPopup('businessCategory', $event)">
+          <p class="input" >{{selectCategory}}</p>
+        </ion-item>
+        <div class="popup-select" *ngIf="popups.businessCategory">
+          <p class="popup-item" *ngFor="let category of businessCategory" (click)="getPopupData(category,'category',$event)">
+            {{category.name}}
+          </p>
+        </div>
+        <p class="inscription">{{'add-business.category-business' | translate}}</p>
+      </div>
+    </div>
+    <div class="added-block2">
+      <div class="added-line">
+        <div class="added-item" (click)="addRole('hostess')">
+          <img src="assets/icon/add-manager.png">
+          <p class="roleTitle">{{'add-business.hostess' | translate}}</p>
+        </div>
+        <div class="added-item-list">
+          <item-card *ngFor="let friend of hostess; let idx = index"
+                     [person]="friend"
+                     [type]="'business-friend'">
+          </item-card>
+        </div>
+      </div>
+      <div class="added-line">
+        <div class="added-item" (click)="addRole('blogger')">
+          <img src="assets/icon/add-manager.png">
+          <p class="roleTitle">{{'add-business.blogger' | translate}}</p>
+        </div>
+        <div class="added-item-list">
+          <item-card *ngFor="let friend of blogger; let idx = index"
+                     [person]="friend"
+                     [type]="'business-friend'">
+          </item-card>
+        </div>
+      </div>
+
+    </div>
+    <div class="button-block">
+      <button class="menu-btn"
+              *ngIf="menuBtn && state=='edit'
+              && newBusinessId !== 0 ||
+              menuBtn && state=='create'
+              && newBusinessId !== 0 "
+              (click)="toMenu()">{{'add-business.show-menu' | translate}}
+      </button>
+      <button class="menu-btn"
+              *ngIf="menuBtn && state=='create'
+              && newBusinessId == 0"
+              (click)="createBusiness('menu')">{{'add-business.menu' | translate}}
+      </button>
+      <button *ngIf="state =='create'
+      && newBusinessId == 0"
+              (click)="createBusiness('my-business')">{{'add-business.create' | translate}}
+      </button>
+      <button *ngIf="state =='edit'
+      && newBusinessId !== 0 ||
+      state =='create' && newBusinessId !== 0"
+              (click)="updateBusiness()">{{'add-business.update' | translate}}
+      </button>
+    </div>
+  </div>
+</ion-content>

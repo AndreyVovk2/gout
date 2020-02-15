@@ -1,0 +1,9 @@
+select-component{
+  .show{
+    height: 15vh !important;
+  }
+  popover-select{
+    height: 0;
+    border: none;
+  };
+}

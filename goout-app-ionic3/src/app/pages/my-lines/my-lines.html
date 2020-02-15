@@ -1,0 +1,31 @@
+<ion-header>
+  <custom-header [title]="businessName"></custom-header>
+  <img class="add-button" src="assets/icon/add-no-bg.png" *ngIf="state === 'myBusiness'" (click)="toLines()">
+</ion-header>
+<ion-content>
+  <div class="lines-list">
+    <div class="line-block" *ngFor="let line of myLines">
+      <div class="text-block">
+        <p class="title">{{line.title}} </p>
+        <div class="people">
+          <img class="edit-icon" src="assets/icon/edit-blue.png" (click)="editLine(line)" *ngIf="state === 'myBusiness'">
+          <div class="column-text">
+            <p class="up-text">נמצאים</p>
+            <p class="count">0</p>
+          </div >
+          <img src="assets/icon/friends-blue.png">
+        </div>
+        <div class="date-create" (click)="toPosts(line)">
+          <div class="column-text">
+            <p class="up-text">פתיחת דלתות</p>
+            <p class="time">{{line.time}}<span class="date-line">{{line.date}}</span></p>
+          </div>
+          <img src="assets/icon/clock-create-icon.png">
+        </div>
+      </div>
+      <div class="photo" (click)="toPosts(line)">
+        <img [src]="line.avatar">
+      </div>
+    </div>
+  </div>
+</ion-content>

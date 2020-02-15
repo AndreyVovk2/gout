@@ -1,0 +1,64 @@
+<ion-header>
+  <custom-header [title]="TTT"></custom-header>
+</ion-header>
+
+<div class="partner-block">
+  <div class="avatar">
+    <img [src]="partner.avatar_src">
+  </div>
+  <div class="partner-info">
+    <p>{{partner.name}}</p>
+    <div class="status">
+      <p *ngIf="partner.status === 'online'">{{partner.status}}</p>
+      <p *ngIf="partner.status === 'offline'">{{partner.beOnline}}</p>
+      <div *ngIf="partner.status === 'online'" class="icon-status online"></div>
+    </div>
+  </div>
+</div>
+
+
+<ion-content #content padding id="chat-room" scrollDownOnLoad="scroll">
+  <ion-infinite-scroll *ngIf="lastMessage === limitMessages" position="top" (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  <ion-list>
+
+    <div class="chat-me"
+         [ngClass]="{'chat-partner' : isChatPartner(chat.data.sender)}"
+         *ngFor="let chat of chats | sort: 'time';index as i"
+         [attr.data-index]="i">
+      <div class="date" *ngIf="dateCheck(chats, i)">
+          <p>{{chat.data.time  | MomentWeek}}</p>
+          <!--<p *ngIf="checkToday(chat.data.date.day, chat.data.date.month) && -->
+              <!--!checkYesterday(chat.data.date.day, chat.data.date.month)">Today</p>-->
+          <!--<p *ngIf="!checkToday(chat.data.date.day, chat.data.date.month) &&-->
+                    <!--checkYesterday(chat.data.date.day, chat.data.date.month)">Yesterday</p>-->
+
+      </div>
+      <div class="time">
+        <div class="checked-icons">
+          <img *ngIf="!chat.data.checked && chat.data.senderId === user.id" src="assets/icon/sended-messages.png">
+          <img *ngIf="chat.data.checked && chat.data.senderId === user.id" src="assets/icon/checked-icon.png">
+        </div>
+        <p>{{  chat.data.time | date: 'HH:mm'}}</p>
+      </div>
+      <div class="chat" >
+        <p>{{chat.data.message}}</p></div>
+    </div>
+
+  </ion-list>
+
+</ion-content>
+
+<ion-footer class="message-block">
+  <button class="send-button" ion-button (click)="send()">
+    <img src="assets/icon/send.png">
+  </button>
+  <ion-input
+    dir="rtl"
+    class="send-message"
+    type="text"
+    [(ngModel)]="message"
+    (keyup.enter)="send()"
+    placeholder="הזן את ההודעה..."></ion-input>
+</ion-footer>

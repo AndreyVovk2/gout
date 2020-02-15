@@ -1,0 +1,66 @@
+page-new-business {
+  custom-photo {
+    height: 20vh;
+  }
+  .inscription-business {
+    right: 4vw!important;
+  }
+  .two-input-item ion-item .select-text {
+    left: auto!important;
+    top: auto!important;
+    transform: inherit!important;
+  }
+  .button-block {
+    display: flex;
+    flex-direction: column;
+    height: 30vw;
+    button {
+      height: 12vw;
+    }
+  }
+  .menu-btn {
+    background-color: #007aff;
+    margin-bottom: 15px;
+  }
+
+  .added-block2{
+    margin-top: 35px;
+    width: 100%;
+    display: flex;
+
+
+
+
+
+
+    .added-item {
+      width: 40%;
+      margin: 0 auto;
+    }
+
+    .added-line {
+      //border: 1px solid yellow;
+      width: 50%;
+    }
+
+    .roleTitle{
+      color: white;
+      font-size: 13px;
+    }
+
+    .added-item-list{
+      color: white;
+      padding: 20px;
+
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4c4c4c+0,ffffff+100&0+0,0.81+100 */
+      //background: -moz-linear-gradient(top, rgba(76,76,76,0) 0%, rgba(255,255,255,0.81) 100%); /* FF3.6-15 */
+      //background: -webkit-linear-gradient(top, rgba(76,76,76,0) 0%,rgba(255,255,255,0.81) 100%); /* Chrome10-25,Safari5.1-6 */
+      //background: linear-gradient(to bottom, rgba(76,76,76,0) 0%,rgba(255,255,255,0.81) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      //filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#004c4c4c', endColorstr='#cfffffff',GradientType=0 ); /* IE6-9 */
+    }
+
+  }
+
+
+
+}

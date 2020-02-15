@@ -1,0 +1,46 @@
+page-notifications {
+  .notification-block{
+    display: block;
+    padding: 0 5vw;
+    direction: rtl;
+    color: white;
+    font-size: 4vw;
+    max-height: 135vw;
+    overflow: scroll;
+  }
+  .access-block {
+    color: white;
+    text-align: end;
+    display: flex;
+    padding: 3vw 5vw 3vw 3vw;
+  }
+  .checkbox-icon {
+    background-color: transparent!important;
+    border-color: #f82c53!important;
+    border-width:1px!important;
+    border-style: solid!important;
+    width: 10vw!important;
+    height: 10vw!important;
+    border-radius: 50%!important;
+  }
+  .checkbox-checked {
+    background-color: #f82c53!important;
+  }
+  .checkbox-inner {
+    left: 4vw!important;
+    top: 1.5vw !important;
+    position: absolute;
+    width: 2vw !important;
+    height: 5vw !important;
+  }
+  .item-inner {
+    border: none!important;
+  }
+  .checkbox-checked .checkbox-inner{
+    left: 4vw!important;
+    top: 1.5vw !important;
+    position: absolute;
+    width: 2vw !important;
+    height: 5vw !important;
+  }
+}

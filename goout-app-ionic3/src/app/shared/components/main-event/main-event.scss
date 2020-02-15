@@ -1,0 +1,272 @@
+main-event{
+  .event {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vw;
+    position: relative;
+    margin-bottom: 10px;
+    .event-photo {
+      display: block;
+      width: 100%;
+      height: 40vw;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 120%;
+      }
+    }
+    .info-block {
+      display: block;
+      width: 100%;
+      height: 55vw;
+      background-color: rgba(18, 6, 14, 0.5);
+      .owner-info {
+        display: block;
+        width: 100%;
+        height: 12vw;
+        position: relative;
+        .favorites-icon {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          float: left;
+          width: 20vw;
+          height: 100%;
+          img{
+            width: 33%;
+            height: 50%;
+            margin-right: 6vw;
+          }
+        }
+        .about-owner {
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          flex-direction: column;
+          width: 55vw;
+          height: 100%;
+          margin-right: 0;
+          p{
+            margin: 0;
+            color:white;
+            padding-right: 5px;
+            max-width: 50vw;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+          .up-text {
+            display: flex;
+            color:#6c5264;
+            font-size: 4vw;
+          }
+          .down-text {
+            display: flex;
+            height: auto;
+            align-items: flex-start;
+            flex-direction: row;
+            font-size: 4.5vw;
+            p{
+              border-right: 2px solid #f82c53;
+            }
+            span {
+              margin-left: 1vw;
+              color:white;
+            }
+          }
+        }
+        .avatar-owner {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          right: 4vw;
+          top: -40%;
+          width: 20vw;
+          height: 20vw;
+          img{
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid #6c5264;
+          }
+        }
+      }
+      .event-description {
+        display: flex;
+        flex-direction: column;
+        .date {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          flex-direction: row;
+          position: relative;
+          width: 100%;
+          height: 10vw;
+          float: right;
+          .date-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 15vw;
+            height: 100%;
+            img{
+              width: 50%;
+              height: 73%;
+            }
+          }
+          .date-text {
+            color: white;
+            font-size: 4vw;
+            .up-text {
+              display: flex;
+              justify-content: flex-end;
+              color: #6c5264;
+            }
+          }
+        }
+        .event-block {
+          display: flex;
+          flex-direction: row;
+          position: relative;
+          .event-text {
+            display: block;
+            width: 100%;
+            padding: 0 10vw;
+            p{
+              color:white;
+            }
+            .title {
+              height: 3vw;
+              display: flex;
+              font-size: 4.5vw;
+              font-weight: 600;
+              margin-bottom: 10px;
+              justify-content: flex-end;
+            }
+            .descr {
+              font-size: 4vw;
+              height: 19.5vw;
+              overflow-y: scroll;
+            }
+          }
+          .border-line {
+            display: block;
+            position: absolute;
+            top: 7vw;
+            right: 5vw;
+            width: 2px;
+            height: 5vw;
+            background-color: #f82c53;
+          }
+        }
+
+      }
+    }
+
+    .footer {
+      display: flex;
+      position: absolute;
+      align-items: center;
+      bottom: 0;
+      width: 100%;
+      height: 10vw;
+      border-top: 1px solid #f82c53;
+      background-color: rgba(18, 6, 14, 0.61);
+      .some-text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 25vw;
+        height: 100%;
+        p {
+          display: flex;
+          color:#6c5264;
+          font-size: 4vw;
+          margin-left: 15px;
+        }
+      }
+      .to-event {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 40vw;
+        height: 100%;
+        .to-event-text{
+          color: white;
+          font-size: 4vw;
+          font-family: Arial,sans-serif;
+          margin-left: 1vw;
+        }
+        img{
+          width: 2.5vw;
+          height: 4vw;
+          margin-left: 3vw;
+        }
+      }
+      .gender-block {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        img{
+          width: 5vw;
+          height: 5vw;
+        }
+        .male , .female{
+          display: flex;
+          align-items: center;
+          flex-direction: row;
+          color: white;
+          p{
+            margin: 0 1vw;
+            font-size: 4vw;
+          }
+        }
+        .male {
+          img{
+            margin-left: 14px;
+            margin-bottom: 1vw;
+          }
+        }
+        .female {
+          img {
+            margin-top: 2vw;
+            width: 4vw;
+            height: 6vw;
+          }
+        }
+      }
+      .neon {
+        display: block;
+        position: absolute;
+        bottom: -12px;
+      }
+    }
+  }
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 2px;
+    direction: ltr!important;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    direction: ltr!important;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    direction: ltr!important;
+
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b30000;
+    width: 5px;
+    direction: ltr!important;
+  }
+}

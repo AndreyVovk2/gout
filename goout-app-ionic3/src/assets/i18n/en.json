@@ -1,0 +1,177 @@
+{
+  "auth": {
+    "btn-next": "Next",
+    "registration-text": "registration text",
+    "verify-text-1": "verify text 1",
+    "verify-text-2": "verify text 2 text",
+    "back": "back",
+    "facebook-button": "Facebook",
+    "login-with": "Login With"
+  },
+  "chat": {
+    "header": "Chat"
+  },
+  "friends": {
+    "title-friend": "Friends",
+    "title-blogger": "Select blogger",
+    "title-hostess": "Select hostess",
+    "title-phone": "New Line Advertising",
+    "all-friend": "All friends",
+    "confirm": "Confirm",
+    "party-now": "Party now",
+    "no-friend": "No friends on list",
+    "load": "Load...",
+    "send-invitations": "Send invitations",
+    "invite": "Invite",
+    "select-all": "Select all",
+    "cancel-all": "Cancel all",
+    "send-contact": "Contacts have been sent",
+    "no-selected": "No contacts selected"
+  },
+  "info": {
+    "terms-of-use": "Terms of use",
+    "about": "About us"
+  },
+  "main": {
+    "main-event": {
+      "time": "time",
+      "details": "details",
+      "people": "people"
+    }
+  },
+  "Sunday": "asdasd",
+  "Mon": "asd",
+  "my-business": {
+  },
+  "my-lines": {
+    "title": "Edit lines",
+    "edit": "Edit"
+  },
+  "new-line": {
+    "header": "Create a post",
+    "edit": "Edit a post",
+    "title": "Line's title",
+    "calendar": "Calendar",
+    "time": "Time",
+    "female": "Female",
+    "male": "Male"
+  },
+  "profile": {
+    "name": "Name",
+    "lastname": "Lastname",
+    "email": "Email",
+    "birthday": "Birthday"
+  },
+  "menu-right": {
+    "new-business": "New business",
+    "my-business": "My business",
+    "my-events": "My events",
+    "attached-business": "Attached to business",
+    "my-privacy-events": "My privacy events",
+    "favorite": "Favorite",
+    "about": "About us",
+    "contact-us": "Contact us",
+    "rating-us": "Rating us",
+    "terms-of-use": "Terms of use"
+  },
+  "add-business": {
+    "title": "Business title",
+    "location": "Location text",
+    "category-business": "business-category",
+    "sub-business-category": "sub-business-category",
+    "menu": "Add menu",
+    "create": "Create",
+    "update": "Update",
+    "show-menu": "Show menu",
+    "hostess": "Hostess",
+    "blogger": "Blogger"
+  },
+  "new-post": {
+    "title": "Title post",
+    "add": "+ ADD",
+    "description":"Description text",
+    "amount": "Amount of tickets",
+    "price": "Price of tickets",
+    "send": "Send post",
+    "update": "Update post",
+    "free": "Free",
+    "fromAge": "from 17",
+    "invite": "Invite",
+    "up-text-free": "some",
+    "down-text-free": "some"
+  },
+  "event-details": {
+    "time": "time",
+    "count": "Count of tickets",
+    "people": "people",
+    "invite": "Invite friends",
+    "guests": "Be a guest",
+    "buy": "Buy tickets",
+    "menu": "Show menu",
+    "notificationAll": "Send alert all",
+    "notification": "Send alert",
+    "inviteList": "Invite's list",
+    "modal": {
+      "title": "title",
+      "price": "Price",
+      "total-price": "total-price",
+      "buy": "Buy",
+      "friends": "Invite friends",
+      "invite": "Invite",
+      "facebook": "send",
+      "phone": "phone"
+    }
+  },
+  "notifications":{
+    "btnText": "Confirm",
+    "accessText": "access text",
+    "header": "Notification"
+  },
+  "date-picker": {
+    "done": "Done",
+    "cancel": "Cancel"
+  },
+  "menu-list": {
+    "create": "ADD",
+    "title": "Menu list"
+  },
+  "menu-item": {
+    "title": "Title",
+    "create": "Create",
+    "header": "Create category"
+  },
+  "photo": {
+    "gallery": "Gallery",
+    "camera": "Camera"
+  },
+  "search-setting": {
+    "search": "Search",
+    "range": "Range",
+    "checkbox-title": "Checkbox",
+    "type": "Type",
+    "category": "Category",
+    "age-range": "Age Range",
+    "boys-age": " Boys age",
+    "girls-age": "Girls age",
+    "search-post": "Search post"
+  },
+  "favorites": {
+    "header": "My Favorites"
+  },
+  "errors": {
+    "new-post": {
+      "title": "Title err",
+      "description": "Description err",
+      "amount_tickets": "Amount err",
+      "price_tickets": "Price ticket err",
+      "canceled": "Post canceled",
+      "facebook": "Posted on facebook"
+    },
+    "search": {
+      "region": "err region",
+      "business": "Please enter a business",
+      "sub_business": "err sub business",
+      "empty": "Nothing found"
+    }
+  }
+}

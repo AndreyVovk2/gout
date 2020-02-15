@@ -1,0 +1,24 @@
+<ion-header>
+  <main-header (event)="btnEvent($event)"></main-header>
+  <search-bar *ngIf="!settingsSearch"
+              [searchPosts]="searchPosts"
+              (postSearch)="postSearch($event)"
+              (settingsSearch)="searchChanged($event)"
+              (activeSearch)="searchState($event)"></search-bar>
+</ion-header>
+<ion-menu type="overlay" side="left" [content]="menu">
+  <menu-left></menu-left>
+</ion-menu>
+<ion-menu type="overlay" side="right" [content]="menu">
+  <menu-right [user]="user" [business]="business"></menu-right>
+</ion-menu>
+<ion-content class="main-content" #menu >
+  <search-settings (exit)="btnEvent($event)" (searchResult)="getResult($event)" *ngIf="settingsSearch"></search-settings>
+  <div class="events-block" *ngIf="!settingsSearch">
+    <main-event *ngFor="let event of allPosts | slice: 0 : slice" [event]="event"></main-event>
+  </div>
+  <ion-infinite-scroll *ngIf="!activeSearch && !settingsSearch" (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
+

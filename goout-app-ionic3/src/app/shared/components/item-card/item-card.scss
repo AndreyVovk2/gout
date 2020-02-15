@@ -1,0 +1,149 @@
+item-card {
+  .item-card {
+    margin-top: 40px;
+    background-color: color($colors, 'blackOpa');
+    width: 100%;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .button-item-card{
+      button{
+        background-color: #f82c53;
+        border-radius: 20px;
+        padding: 8px;
+        margin: 0px 15px;
+        min-width: 100px;
+        color: #ffffff;
+        font-size: 15px;
+      }
+      img{
+        height: 18px;
+        margin-right: 7px;
+      }
+    }
+
+    .photo-block {
+      position: relative;
+      width: 20%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .avatar {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: color($colors, 'border-avatar') solid 1px;
+        img {
+          height: 100%;
+        }
+      }
+    }
+
+    .item-text-block {
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      p {
+        padding-right: 5px;
+        margin: 0;
+      }
+      .name-block {
+        display: flex;
+        align-items: center;
+        margin-left: 18px;
+        .name {
+          color: #ffffff;
+          font-size: 15px;
+        }
+        .border {
+          height: 15px;
+          border-right: #f92c53 solid 2px;
+        }
+      }
+      .place {
+        font-size: 11px;
+        color: #6c5264;
+      }
+      .phone-number {
+        font-size: 11px;
+        color: #6c5264;
+        margin-top: 3px;
+      }
+    }
+
+
+
+
+  }
+
+  .item-card-business{
+    color: red;
+    background-color: transparent;
+    margin-top: 0px;
+    height: 80px;
+
+    .photo-block{
+      width: 100%;
+    }
+
+    .photo-block .avatar {
+      height: 70px;
+      width: 70px;
+    }
+
+    .status-send {
+      color: white;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+    }
+
+    .status-send img {
+      height: 35px;
+      width: 35px;
+    }
+
+    .name-block {
+      margin: 20px 0 10px 0;
+    }
+
+    .item-text-block {
+      margin-right: 6px;
+    }
+
+
+
+  }
+
+  .checkbox{
+    margin-left: 10px;
+
+    .checkbox-icon {
+      background-color: transparent!important;
+      border-color: #f82c53!important;
+      border-width:1px!important;
+      border-style: solid!important;
+      width: 30px!important;
+      height: 30px!important;
+      border-radius: 50%!important;
+    }
+    .checkbox-checked {
+      background-color: #f82c53!important;
+    }
+    .checkbox-inner {
+      left: 10px!important;
+      top: 3px !important;
+      position: absolute;
+      width: 8px !important;
+      height: 16px !important;
+    }
+  }
+
+
+
+}

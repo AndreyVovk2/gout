@@ -1,0 +1,20 @@
+<ion-header>
+  <custom-header [title]="'notifications.header' | translate"></custom-header>
+</ion-header>
+
+<ion-content>
+    <div class="wrapper">
+      <div class="notification-block">
+        <p class="notification-text">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam, autem consectetur culpa debitis enim est fuga illo incidunt laboriosam, obcaecati odio sed velit vitae voluptate. A aliquid asperiores debitis, ducimus facere inventore laborum nihil nisi nobis officiis quam quasi quod, recusandae veniam voluptas. Consequatur corporis dolores in magnam magni modi quidem recusandae repellat. Aliquam distinctio doloremque eum impedit modi nesciunt non porro quaerat velit. Alias doloremque ducimus ea est hic in ipsam laboriosam, magnam nemo nisi quam qui similique sint tempore, veritatis? Aspernatur autem eligendi est inventore, itaque perspiciatis porro ratione suscipit ut voluptatum? A autem commodi cumque delectus ea eum ex exercitationem ipsa modi natus nemo nobis non nostrum nulla rem sequi tempora vel veritatis vero, voluptas? Architecto, atque dolorem eaque eligendi explicabo fugiat illum iure, laudantium magni mollitia nemo odio quas rem, tempore vel. Accusantium adipisci, animi architecto at autem cumque enim esse, et neque praesentium provident sapiente similique temporibus ut vitae voluptatem voluptates! Aliquid aperiam architecto, asperiores beatae dolore dolorem earum eligendi eos error harum ipsam laborum nihil, nulla quo sed totam, veritatis! Adipisci assumenda commodi debitis dicta distinctio nam non, officia omnis pariatur quod recusandae sapiente temporibus voluptatem voluptatibus voluptatum! Accusamus esse fuga incidunt, ipsum iste nobis obcaecati quam quidem sequi veniam. Accusantium adipisci alias autem commodi consequatur cupiditate dignissimos doloribus dolorum ducimus eligendi et harum id illum inventore ipsa laboriosam magni maiores molestias nemo nostrum nulla obcaecati, odio, placeat porro quas quasi quibusdam quod repellat repudiandae rerum sunt ullam unde vel. Dolores, iure, tempore?
+        </p>
+      </div>
+      <div class="access-block">
+        <ion-label class="access-text">{{'notifications.accessText' | translate}}</ion-label>
+        <ion-checkbox [(ngModel)]="access" class="access-button"></ion-checkbox>
+      </div>
+      <div class="button-block">
+        <button (click)="confirmAccess()" [disabled]="!access">{{'notifications.btnText' | translate}}</button>
+      </div>
+    </div>
+</ion-content>

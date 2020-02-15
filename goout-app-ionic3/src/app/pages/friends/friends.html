@@ -1,0 +1,71 @@
+<ion-header>
+  <custom-header [title]="title | translate"></custom-header>
+
+  <div class="button-invite"
+       *ngIf = "type === 'phone'"
+       [@popInvite] = "stateAnimateInvite">
+    <button [disabled]="false" (click)="sendPhoneContact()">
+      <img src="assets/icon/icons-tool-bar-location.png" alt="">
+      <p>{{'friends.send-invitations' | translate}}</p>
+    </button>
+  </div>
+
+</ion-header>
+
+<ion-content >
+
+  <div class="search-block"  *ngIf = "type === 'blogger' || type === 'hostess' || type === 'phone' ">
+    <div class="icon-search">
+      <img src="assets/icon/search.png">
+    </div>
+
+    <div class="search-input-block">
+      <input class="search-input"
+             id="search-input"
+             type="search"
+             [(ngModel)]="searchStr">
+    </div>
+    <div class="icon-search-settings">
+
+    </div>
+  </div>
+
+  <div *ngIf="type === 'friend'" [(ngModel)]="tab">
+    <ion-segment (ionChange)="change()">
+      <ion-segment-button value="all">
+        {{'friends.all-friend' | translate}}
+      </ion-segment-button>
+      <ion-segment-button value="confirm">
+        {{'friends.confirm' | translate}}
+      </ion-segment-button>
+      <ion-segment-button value="party">
+        {{'friends.party-now' | translate}}
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div class="select-all" *ngIf="type === 'phone'">
+    <p *ngIf="showSelectAll" (click)="selectAll()">{{ 'friends.select-all'  | translate}}</p>
+    <p *ngIf="!showSelectAll"  (click)="cancelAll()">{{ 'friends.cancel-all'  | translate}}</p>
+  </div>
+
+  <div>
+    <item-card *ngFor="let friend of friends  | filterField : searchStr : searchFields   | slice: 0 : slice"
+               [person]="friend"
+               [type]="type"
+               (showModal)="showModal($event)"
+               (showInvitePhone)="showInvitePhone($event)"></item-card>
+
+    <p class="info-friend">{{ infoText | translate}}</p>
+  </div>
+
+  <modal-window *ngIf="modalWindow"
+                (closeModalStatus) = "closeModal($event)">
+  </modal-window>
+
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>

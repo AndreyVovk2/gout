@@ -1,0 +1,49 @@
+<ion-content class="bg">
+  <div class="wrapper">
+    <div class="logo-block">
+      <img src="assets/imgs/logo.png">
+    </div>
+    <div class="input-block">
+      <div class="text-block" *ngIf="state === 'send'">
+        <span>{{'auth.registration-text' | translate}}</span>
+      </div>
+      <ion-input *ngIf="state === 'send'"
+                 dir="ltr"
+                 class="input-phone"
+                 type="tel"
+                 name="phone"
+                 [(ngModel)]="send.phone"
+                 [brmasker]="{mask: '0000000000', len: 10, type: 'num'}"></ion-input>
+      <div class="verify-block" *ngIf="state === 'verify'">
+        <div class="text-block up-position">
+          <span>{{number}}{{'auth.verify-text-1' | translate}}</span>
+        </div>
+        <div class="text-block up-position"><span>הזינו את הקוד</span></div>
+        <div class="multi-input" dir="ltr">
+          <ion-input maxlength="1" type="tel" *ngFor="let input of inputs; let i = index;" tabindex="{{i + 1 || i -1}}"
+                     class="auth-input" (ionChange)="saveValue($event, i) ">
+          </ion-input>
+        </div>
+        <div class="text-block">
+          <p class="text-block-item" (click)="back()">{{'auth.back' | translate}}</p>
+          <span>{{'auth.verify-text-2' | translate}}</span>
+        </div>
+      </div>
+
+      <div class="facebook-block">
+        <div class="facebook-button" *ngIf="state === 'facebook'" (click)="getFacebookData()">
+          <div class="facebook-icon">
+            <img class="icon-camera" src="assets/icon/facebook.png">
+          </div>
+          <p>{{'auth.facebook-button' | translate}}</p>
+          <p>{{'auth.login-with' | translate}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="button-block" *ngIf="state !='facebook'">
+      <button (click)="register()">
+        {{'auth.btn-next' | translate}}
+      </button>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,42 @@
+<ion-header>
+  <custom-header [title]="chatTitle"></custom-header>
+</ion-header>
+
+<ion-content>
+  <div class="background-chat">
+    <div class="search-chat">
+      <label>
+        <ion-icon class="icon-search" name="search"></ion-icon>
+        <input class="serach-input" type="text" id="search" placeholder="search"
+               #search name="search">
+      </label></div>
+  </div>
+  <div class="chat-item">
+    <ion-list>
+      <!--<item-card [person]="user" (click)="openChat(user)"></item-card>-->
+      <div dir="rtl" class="user-card" (click)="openChat(user)" *ngFor="let user of usersChat">
+        <div class="avatar">
+          <img [src]="user.avatar_src">
+          <div *ngIf="user.status === 'online'" class="online"></div>
+        </div>
+        <div class="chat-info">
+          <p class="partner-name">{{user.name}}</p>
+          <p class="last-message">{{user.lastMessage}}</p>
+        </div>
+        r
+        <div class="time-block">
+          <div class="time-message">{{user.lastMessageTime}}</div>
+          <div class="checked-icon">
+            <div *ngIf="user.noCheckedMessages !== 0" class="not-checked">
+              <img src="assets/icon/mini-chat-icon.png">
+              <p>{{user.noCheckedMessages}}</p>
+            </div>
+            <img *ngIf="user.noCheckedMessages === 0 && user.partnerMessages" src="assets/icon/checked-icon.png">
+            <img *ngIf="user.noCheckedMessages === 0 && !user.partnerMessages" src="assets/icon/sended-messages.png">
+
+          </div>
+        </div>
+      </div>
+    </ion-list>
+  </div>
+</ion-content>

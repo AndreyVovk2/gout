@@ -1,0 +1,19 @@
+<ion-header>
+  <custom-header [title]="title"></custom-header>
+</ion-header>
+<ion-content>
+  <div class="business-list">
+    <div class="business-block" *ngFor="let business of myBusiness">
+      <div class="edit-block" (click)="editBusiness(business)" *ngIf="state === 'myBusiness'">
+        <img src="assets/icon/edit-blue.png">
+      </div>
+      <div dir="rtl" class="name" (click)="toLines(business.id)">
+        <p>{{business.name}}</p>
+      </div>
+      <div class="photo" (click)="toLines(business.id)">
+        <img [src]="business.photo">
+      </div>
+    </div>
+  </div>
+    <img class="add-button" *ngIf="state === 'myBusiness'" src="assets/icon/add-button.png" (click)="addBusiness()">
+</ion-content>

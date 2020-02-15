@@ -1,0 +1,59 @@
+<ion-header>
+  <custom-header [title]="title"></custom-header>
+</ion-header>
+<ion-content (click)="closeLinePopup()">
+  <custom-photo [picture]="avatar" (changePhoto)="getLinePhoto($event)"></custom-photo>
+  <div class="info-block">
+    <div class="name">
+      <ion-input type="text" [(ngModel)]="line.title" maxlength="25"></ion-input>
+      <p class="inscription-line inscription">{{'new-line.title' | translate}}</p>
+    </div>
+    <div class="two-input-block">
+      <div class="two-input-item">
+        <img class="right-icon" src="assets/icon/clock-create-icon.png">
+        <ion-datetime displayFormat="HH:mm" pickerFormat="HH mm" [(ngModel)]="line.time"></ion-datetime>
+        <p class="inscription">{{'new-line.time' | translate}}</p> <div style="color: green; font-size: 20px"></div>
+      </div>
+      <div class="two-input-item">
+        <img class="right-icon" src="assets/icon/calendar.png">
+        <ion-datetime displayFormat="DD.MM.YYYY" pickerFormat="DD.MMMM.YYYY" max="{{maxDate}}" min="{{minDate}}"
+                      [monthNames]="customMonthName" [(ngModel)]="line.date"
+                      cancelText="{{'date-picker.cancel' | translate}}"
+                      doneText="{{'date-picker.done' | translate}}"></ion-datetime>
+        <p class="inscription">{{'new-line.calendar' | translate}}</p>
+      </div>
+    </div>
+    <div class="two-input-block">
+      <div class="two-input-item">
+        <img class="arrow-select" src="assets/icon/arrow-bottom.png">
+        <ion-item class="popup-block" dir="rtl" (click)="showPopup('maleAge', $event)">
+          <p class="input">{{selectMale}}</p>
+        </ion-item>
+        <div class="popup-select" *ngIf="popups.maleAge">
+          <p class="popup-item" *ngFor="let age of maleArray" (click)="getPopupData(age,'maleAge',$event)">
+            {{age.age}}
+          </p>
+        </div>
+        <img class="gender gender-female" src="assets/icon/female-main.png">
+        <p class="inscription">{{'new-line.female' | translate}}</p>
+      </div>
+      <div class="two-input-item">
+        <img class="arrow-select" src="assets/icon/arrow-bottom.png">
+        <ion-item class="popup-block" dir="rtl" (click)="showPopup('femaleAge', $event)">
+          <p class="input">{{selectFemale}}</p>
+        </ion-item>
+        <div class="popup-select" *ngIf="popups.femaleAge">
+          <p class="popup-item" *ngFor="let age of femaleArray" (click)="getPopupData(age,'femaleAge',$event)">
+            {{age.age}}
+          </p>
+        </div>
+        <img class="gender" src="assets/icon/male-main.png">
+        <p class="inscription">{{'new-line.male' | translate}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="button-block">
+    <button (click)="updateLine()" *ngIf="state==='edit'">{{'my-lines.edit' | translate}}</button>
+    <button (click)="createLine('menu')" *ngIf="state==='create'">{{'new-line.create' | translate}}</button>
+  </div>
+</ion-content>T

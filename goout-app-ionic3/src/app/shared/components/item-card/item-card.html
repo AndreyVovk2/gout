@@ -1,0 +1,46 @@
+<div class="item-card"
+     [ngClass] = "{'item-card-business': type === 'business-friend'}"
+     [@popCard] = "'show'"
+>
+  <div class="button-item-card"
+       *ngIf = "type === 'blogger' || type === 'hostess'">
+    <button [disabled]="person.role"  class="row" (click)="invite()">
+      <img src="assets/icon/icons-tool-bar-location.png" alt="">
+      <p>{{' ' | translate}}</p>
+    </button>
+  </div>
+  <div class="checkbox" *ngIf="type === 'phone'">
+    <ion-checkbox
+      [(ngModel)]="person.phone_status"
+      (click)="InvitePhone(person.phone_status)"
+      class="access-button"></ion-checkbox>
+  </div>
+
+  <div class="item-text-block">
+
+    <div class="name-block">
+      <p class="name">{{person.name}}
+        <span *ngIf="type !== 'business-friend'">{{person.lastname}}</span>
+      </p>
+      <div *ngIf="type === 'friend'" class="border"></div>
+    </div>
+    <p *ngIf="type === 'business-friend'" class="place">{{person.status_send ? 'Accepted' : 'Sent by'}}</p>
+    <p *ngIf="type === 'friend'" class="place">Place</p>
+    <p *ngIf="type === 'phone'" class="phone-number">{{person.number}}</p>
+  </div>
+  <div class="photo-block">
+    <div class="avatar">
+      <img *ngIf="avatar" src="{{person.avatar_src}}">
+      <img *ngIf="!avatar" src="assets/icon/noavatar.png" alt="">
+      <div  class="status-send"
+            *ngIf="type === 'business-friend'">
+        <img *ngIf="!person.status_send" src="assets/icon/status-send.png" alt="">
+        <img *ngIf="person.status_send" src="assets/icon/status-uproov.png" alt="">
+      </div>
+    </div>
+
+  </div>
+
+
+
+</div>

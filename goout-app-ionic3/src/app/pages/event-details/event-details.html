@@ -1,0 +1,213 @@
+<ion-content>
+  <custom-header [title]="event.business.name" [subtitle]="event.line.title" [eventId]="event.id"></custom-header>
+
+  <!--<ion-item>-->
+  <!--<ion-input type="text" placeholder="MY QR Code data" [(ngModel)]="qrData">-->
+  <!--</ion-input>-->
+  <!--</ion-item>-->
+  <!--<button ion-button full icon-left (click)="createCode()"><ion-icon name="barcode"></ion-icon>Create Code</button>-->
+  <!--<button ion-button full icon-left (click)="scanCode()" color="secondary"><ion-icon name="qr-scanner"></ion-icon>Scan Code</button>-->
+
+  <!--<ion-card *ngIf="createdCode">-->
+  <!--<ngx-qrcode [qrc-value]="createdCode"></ngx-qrcode>-->
+  <!--<ion-card-content>-->
+  <!--<p>Value: {{ createdCode }}</p>-->
+  <!--</ion-card-content>-->
+  <!--</ion-card>-->
+
+  <!--<ion-card *ngIf="scannedCode">-->
+  <!--<ion-card-content>-->
+  <!--Result from Scan: {{ scannedCode }}-->
+  <!--</ion-card-content>-->
+  <!--</ion-card>-->
+  <div class="edit-post" *ngIf="state === 'businessPublicist' || state=== 'myBusiness'" (click)="editPost()">
+    <img src="assets/icon/edit-blue.png">
+  </div>
+
+  <div class="wrapper low-height">
+    <div class="event">
+      <div class="event-photo">
+        <img *ngIf="event.picture !== null" [src]="event.picture">
+        <img *ngIf="event.picture === null" [src]="event.line.avatar">
+      </div>
+      <div class="info-block">
+        <div class="owner-info">
+          <div class="icon-block" *ngIf="state==='user'">
+            <img class="details-icon"
+                 src="assets/icon/chat.png"
+                 (click)="openChat()">
+            <img class="details-icon little-icon" src="assets/icon/facebook-purple.png">
+          </div>העסקים שלי
+
+          <div class="about-owner">
+            <p class="up-text">{{event.creator.name}} {{event.creator.lastname}}</p>
+            <div class="down-text">
+              <p class="event-name">{{event.title}}</p>
+            </div>
+          </div>
+          <div class="avatar-owner">
+            <img [src]="event.creator.avatar_src">
+          </div>
+        </div>
+
+        <div class="event-description">
+          <div class="event-block">
+            <div dir="rtl" class="event-text">
+              <p class="title"></p>
+              <p class="descr">{{event.description}}</p>
+            </div>
+            <div class="border-line"></div>
+          </div>
+          <div class="date">
+            <div>
+              <img class="Waze_image" src="assets/icon/Waze.png"></div>
+            <div>
+              <div class="date-text">
+                <p class="up-text">{{'event-details.time' | translate}}</p>
+                <p class="time">{{event.time}} <span>{{event.date}}</span></p>
+              </div>
+            </div>
+
+            <div class="date-icon">
+              <img src="assets/icon/clock-create-icon.png">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="gender-block">
+          <div class="female">
+            <img src="assets/icon/female-main.png">
+            <p>{{event.line.girl_age_id}}</p>
+          </div>
+          <div class="male">
+            <img src="assets/icon/male-main.png">
+            <p>{{event.line.boy_age_id}}</p>
+          </div>
+        </div>
+        <div class="some-text"><p>{{'event-details.people' | translate}}</p></div>
+        <div class="neon">
+          <img src="assets/imgs/neon_border.png">
+        </div>
+      </div>
+    </div>
+
+    <div class="dynamic-button-block">
+      <div class="temp-block" *ngIf="state === 'user' && event.business.business_category_id === 2">
+        <button class="red-button blue-button"
+                ion-button
+                *ngIf="!show"
+                (click)="showModal('buy')">{{'event-details.buy' | translate}}
+        </button>
+
+        <button class="red-button"
+                *ngIf="!show"
+                ion-button>{{'event-details.guests' | translate}}
+        </button>
+        <button class="red-button"
+                ion-button
+                (click)="showModal('buy')"
+                *ngIf="show"
+        >{{'event-details.count' | translate}}
+        </button>
+        <button class="red-button"
+                ion-button>{{'event-details.notification' | translate}}
+        </button>
+      </div>
+      <div class="temp-block" *ngIf="state != 'user' && event.business.business_category_id === 2">
+        <button class="red-button"
+                ion-button (click)="showModal('invite')">{{'event-details.invite' | translate}}
+        </button>
+        <button ion-button
+                class="red-button">{{'event-details.inviteList' | translate}}
+        </button>
+        <button class="red-button"
+                ion-button>{{'event-details.notificationAll' | translate}}
+        </button>
+      </div>
+      <div class="temp-block" *ngIf="state === 'user' && event.business.business_category_id != 2">
+        <button class="red-button"
+                ion-button
+                (click)="showMenu()">{{'event-details.menu' | translate}}
+        </button>
+        <button class="red-button" (click)=" notifications()"
+                ion-button>{{'event-details.notification' | translate}}
+        </button>
+      </div>
+      <div class="temp-block" *ngIf="state != 'user' && event.business.business_category_id != 2">
+        <button class="red-button"
+                ion-button>{{'event-details.notification' | translate}}
+        </button>
+      </div>
+    </div>
+    <ion-slides loop *ngIf="slider" class="gallery" initialSlide="0" effect="coverflow" centeredSlides="true"
+                slidesPerView="3">
+      <ion-slide *ngFor="let item of event.galleries" style="width: 100%;height: 100%">
+        <img (click)="openModal(item.picture)" [src]="item.picture">
+      </ion-slide>
+
+    </ion-slides>
+  </div>
+  <ion-footer class="addIcon">
+<!--    <label class="create-image" for="input">Add</label>-->
+    <button id="input" type="file" class="button_addIcon" (click)="addPicture($event.target.files)" name="Add" accept=".png, .jpg, .jped" >Add</button>
+    <!--    <ion-icon style="margin-right: 4px" ios="iosa-dd" md="md-add"></ion-icon>-->
+
+  </ion-footer>
+</ion-content>
+
+<div class="wrapper" *ngIf="modals.show" (click)="popover($event)">
+  <div class="popover" *ngIf="modals.buy">
+    <div class="neon up-neon">
+      <img src="assets/imgs/neon_border.png">
+    </div>
+    <div class="title">{{'event-details.modal.title' | translate}}</div>
+    <div class="price-post">
+      <p class="price-icon">₪</p>
+      <span>{{event.price_tickets}}</span>
+      <p class="price-text">: {{'event-details.modal.price' | translate}}
+    </div>
+    <div class="count-tickets">
+      <div class="count-button" (click)="plusCount()">+</div>
+      <div class="count-item">
+        <p>{{count}}</p>
+      </div>
+      <div class="count-button" (click)="minusCount()">-</div>
+    </div>
+    <div class="total-price">
+      <p class="price-icon">₪</p>
+      <span>{{event.price_tickets * count}}</span>
+      <p class="price-text">: {{'event-details.modal.total-price' | translate}}</p></div>
+    <button class="modal-button" (click)="buyTickets()">{{'event-details.modal.buy' | translate}}</button>
+    <div class="neon down-neon">
+      <img src="assets/imgs/neon_border.png">
+    </div>
+  </div>
+  <div class="popover" *ngIf="modals.invite">
+    <div class="neon up-neon">
+      <img src="assets/imgs/neon_border.png">
+    </div>
+    <div class="title">{{'event-details.modal.friends' | translate}}</div>
+    <div class="invite-button-block">
+      <div class="invite-friends-button phone-invite">
+        <div class="invite-icon phone-icon">
+          <img src="assets/icon/phone.png">
+        </div>
+        <p class="phone-text" (click)="goToPhoneList()"> {{'event-details.modal.phone' | translate}}</p>
+      </div>
+      <div class="invite-friends-button" (click)="FBshowDialog()">
+        <div class="invite-icon">
+          <img src="assets/icon/facebook.png">
+        </div>
+        <p>{{'event-details.modal.facebook' | translate}}</p>
+      </div>
+    </div>
+    <button class="modal-button" (click)="buyTickets()">{{'event-details.modal.invite' | translate}}</button>
+    <div class="neon down-neon">
+      <img src="assets/imgs/neon_border.png">
+    </div>
+  </div>
+  <ion-footer>
+    <button>ADD</button>
+  </ion-footer>
+</div>

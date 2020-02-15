@@ -1,0 +1,125 @@
+page-friends {
+  .segment {
+    border: #15375c solid 2px;
+    height: 25px;
+    background-color: rgba(0, 0, 0, 0.1);
+    .segment-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      border-radius: 0 !important;
+      height: 25px;
+      color: color($colors, 'light');
+      opacity: 1;
+    }
+    .segment-activated {
+      border: none;
+      border-radius: 0 !important;
+      height: 25px;
+      background-color: #007aff !important;
+    }
+  }
+  .info-friend{
+    color: #ffffff;
+    font-size: 15px;
+    margin: 10px 30px;
+    text-align: right;
+  }
+
+  .search-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: color($colors, 'search');
+    width: 95%;
+    height: 32px;
+    margin-top: 8px;
+    border-radius: 25px;
+    margin-left: 8px;
+    .icon-search {
+      padding: 0 10px 0 20px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      img {
+        height: 60%;
+      }
+    }
+    .search-input-block {
+      display: flex;
+      width: 75%;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      .search-input{
+        width: 100%;
+        border: none;
+        border-radius: 4px;
+        height: 80%;
+
+      }
+    }
+
+    .icon-search-settings {
+      padding: 0 20px 0 10px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      img {
+        height: 60%;
+      }
+    }
+  }
+
+  .button-confirm{
+    width: 140px;
+    //height: 20px;
+    border-radius: 6px;
+    background-color: rgb(249, 44, 83);
+    color: white;
+    padding: 13px;
+    font-size: 19px;
+  }
+
+  .button-invite{
+    //display: flex;
+    //justify-content: center;
+    position: fixed;
+    bottom: 15px;
+    width: 100%;
+
+    button{
+      display: flex;
+      justify-content: center;
+      background-color: #f82c53;
+      border-radius: 4px;
+      padding: 8px;
+      margin: 0 auto;
+      min-width: 100px;
+      color: #ffffff;
+      font-size: 15px;
+    }
+    img{
+      height: 18px;
+      margin-right: 7px;
+    }
+    p{
+      margin-right: 10px;
+    }
+  }
+
+  .select-all{
+    margin: 15px 0 10px 0;
+    p{
+      font-size: 16px;
+      text-decoration: underline;
+      color: #007aff;
+      margin-left: 10px;
+    }
+  }
+
+
+
+
+}

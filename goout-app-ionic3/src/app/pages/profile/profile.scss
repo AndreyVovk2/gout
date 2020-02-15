@@ -1,0 +1,244 @@
+page-profile {
+  .bg-profile {
+    background: url('../../../assets/imgs/bg-profile.png');
+    background-size: cover;
+    .header-block {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 15vw;
+      background-color: black;
+      .path {
+        width: 20vw;
+        display: flex;
+        justify-content: center;
+        img{
+          margin-right: 8vw;
+          width: 3vw;
+          height: 5vw;
+        }
+        p {
+          text-align: right;
+          margin-right: 15px;
+          color: #006bdf;
+          font-weight: 900;
+        }
+      }
+      .middle {
+        width: 60vw;
+        color: white;
+        text-align: center;
+      }
+    }
+    .avatar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 40vw;
+      .change-photo-block {
+        width: 120px;
+        height: 120px;
+        position: relative;
+        .camera {
+          width: 7vw;
+          height: 6vw;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+        }
+        .profile-photo {
+          width: 120px;
+          height: 120px;
+          border-radius: 50%;
+        }
+      }
+    }
+    .user-info {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      .user-name{
+        width: 100%;
+        display: flex;
+        position: relative;
+        flex-direction: row;
+      }
+      .user-email{
+        position: relative;
+        input{
+          margin: 10vw auto ;
+          width: 95vw;
+          height: 12vw;
+        }
+      }
+      input {
+        font-size: 5vw;
+        margin: 0 2.5vw;
+        height: 6vw;
+        padding-bottom: 0;
+        width: 45vw;
+        text-align: center;
+        border-bottom: 1px solid #f82c53;
+        color:white;
+      }
+    }
+  }
+
+  .checkbox-block {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    width: 100vw;
+    height: 10vw;
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      width: 25vw;
+      height: 8vw;
+      margin: 10vw 10px;
+      border-radius: 20px;
+      background-color: transparent;
+      p{
+        color:white;
+        text-align: center;
+        width: 17vw;
+      }
+    }
+    .male{
+      border: solid 2px #007afe;
+      img{
+        width: 5vw;
+        height: 5vw;
+      }
+    }
+    .female{
+      border: solid 2px #f82c53;
+      img{
+        width: 4vw;
+        height: 6vw;
+      }
+    }
+  }
+  .date-time {
+    display: block;
+    width: 100%;
+    position: relative;
+    margin-top: 10vw;
+  }
+
+  .button-block {
+   margin-top:20vw;
+  }
+  .name {
+    color: #6c5264;
+  }
+  .name_div{
+    position: absolute;
+    margin-left: 42%;
+  }
+  ion-datetime{
+    display: block;
+    width: 100%;
+    height: 6vw;
+    border-bottom: 1px solid #f82c53;
+    color: white;
+    text-align: center;
+    font-size: 5vw;
+    padding: 0!important;
+  }
+  .item-cover {
+    width: 10px;
+    height: 10px;
+  }
+
+  .bg-opacity {
+    display: block;
+    height: 60vw;
+    background-color: rgba(0, 0, 0, 0.66);
+    border-top: 2px solid color($colors,border);
+    border-bottom: 2px solid color($colors,border);
+  }
+
+  .region {
+    display: block;
+    width: 100%;
+    height: 44vw;
+    overflow: scroll;
+  }
+
+  .region-item {
+    background-color: transparent;
+    border: none!important;
+    color:white;
+    display: flex;
+    flex-direction: row-reverse;
+    .label{
+      flex: unset;
+    }
+    .checkbox-icon {
+      background-color: transparent!important;
+      border:1px solid #f82c53;
+      width: 10vw!important;
+      height: 10vw!important;
+      border-radius: 50%;
+    }
+    .checkbox-checked {
+      background-color: #f82c53!important;
+    }
+    .checkbox-inner {
+      left: 4vw!important;
+      top: 1.5vw !important;
+      position: absolute;
+      width: 2vw !important;
+      height: 5vw !important;
+    }
+    .item-inner {
+      border: none!important;
+    }
+    .checkbox-checked .checkbox-inner{
+      left: 4vw!important;
+      top: 1.5vw !important;
+      position: absolute;
+      width: 2vw !important;
+      height: 5vw !important;
+    }
+  }
+
+  .inscription {
+    color: #6c5264;
+    font-size: 4vw;
+    position: absolute;
+    right: 5vw;
+    bottom: -5vw;
+  }
+
+  .first-input {
+    right: auto!important;
+    left: 34vw!important;
+  }
+
+  .inscription-email {
+    bottom: 4vw!important;
+    right:2vw!important;
+  }
+
+
+  .to-region{
+    position: relative;
+    background: transparent;
+    text-decoration: underline;
+    color: #126dcf;
+    font-size: 5vw;
+    font-weight: 600;
+    width: 50vw;
+    img{
+      margin-left: 2vw;
+      width: 6.5vw;
+      height: auto;
+    }
+  }
+}

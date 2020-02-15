@@ -1,0 +1,29 @@
+main-header {
+  .main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    background-color: black;
+    .left_icon {
+      display: flex;
+      flex: 50;
+      justify-content: flex-start;
+      align-items: center;
+      .icon{
+        padding-left: 5vw;
+      }
+      .icon:first-child {
+        padding-left: 3vw;
+      }
+    }
+    .right_icon {
+      display: flex;
+      flex: 50;
+      justify-content: flex-end;
+      .icon {
+        padding-right: 3vw;
+      }
+    }
+  }
+}

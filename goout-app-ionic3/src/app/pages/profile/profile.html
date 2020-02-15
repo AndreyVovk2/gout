@@ -1,0 +1,103 @@
+<ion-content class="bg-profile">
+  <div class="header-block">
+    <div class="left-block path">
+      <img src="../../../assets/icon/back.png" (click)="goBack()" alt=""
+           *ngIf="state != 'first'">
+    </div>
+    <div class="middle" *ngIf="state != 'settings' && state !== 'region'" >
+      יצירת פרופיל חדש
+    </div>
+    <div class="middle" *ngIf="state === 'settings'">
+      הפרופיל שלי
+    </div>
+    <div class="middle" *ngIf="state === 'region'">
+      הגדרות חיפוש
+    </div>
+    <div class="right-block path">
+      <p *ngIf="state === 'first'">1/3</p>
+      <p *ngIf="state === 'second'">2/3</p>
+      <p *ngIf="state === 'third'">3/3</p>
+    </div>
+  </div>
+
+  <div class="avatar" *ngIf="state === 'first' || state === 'settings'">
+    <div class="change-photo-block">
+      <img (click)="getAvatar()" class="camera" src="assets/icon/camera.png">
+      <img class="profile-photo" [src]="user.avatar_src" *ngIf="user.avatar_src && !avatar_image">
+      <img class="profile-photo" [src]="avatar_image" *ngIf="avatar_image">
+      <img class="profile-photo" [src]="user.avatar_url" *ngIf="user.avatar_url && !user.avatar_src && !avatar_image">
+    </div>
+  </div>
+
+  <div class="user-info">
+    <div class="user-name" *ngIf="state === 'first' || state === 'settings'">
+      <ion-input type="text" [(ngModel)]="user.lastname"></ion-input>
+      <p class="inscription">{{'profile.lastname' | translate}}</p>
+      <ion-input type="text" [(ngModel)]="user.name"></ion-input>
+      <p class="inscription first-input">{{'profile.name' | translate}}</p>
+    </div>
+    <div class="user-email" *ngIf="state === 'first' || state === 'settings'">
+      <ion-input type="email" maxlength="33" [(ngModel)]="user.email"></ion-input>
+      <p class="inscription inscription-email">{{'profile.email' | translate}}</p>
+    </div>
+    <div class="checkbox-block" [ngClass]="{'profile-checkbox': profilePicker}" *ngIf="state == 'second' || state ==='settings'">
+      <div class="checkbox-item female" (click)="changeBg('female')" [ngStyle]="{'background': getBgFemale(user.gender)}">
+        <p>נקבה </p>
+        <img src="assets/icon/female-off.png" *ngIf="user.gender === 'male' || !user.gender">
+        <img src="assets/icon/female-on.png" *ngIf="user.gender === 'female'">
+      </div>
+      <div class="checkbox-item male" (click)="changeBg('male')" [ngStyle]="{'background': getBgMale(user.gender)}">
+        <p>זכר</p>
+        <img src="assets/icon/male-off.png" *ngIf="user.gender === 'female' || !user.gender">
+        <img src="assets/icon/male-on.png" *ngIf="user.gender === 'male'">
+      </div>
+      <div class="name_div">
+      <p class="name">מין</p></div>
+    </div>
+    <div class="date-time"   *ngIf="state === 'second' || state ==='settings'" [ngClass]="{'picker-profile': profilePicker}">
+      <ion-datetime #picker
+
+                    (click)="openPicker()"
+                    displayFormat="DD.MM.YYYY"
+                    pickerFormat="MMMM/DD/YYYY"
+                    [monthNames]="monthName"
+                    [(ngModel)]="user.birthday"></ion-datetime>
+      <p class="inscription">{{'profile.birthday' | translate}}</p>
+    </div>
+  </div>
+  <div class="wrapper-region">
+    <div class="bg-opacity" *ngIf="businessCategory && state === 'third' || businessCategory && state === 'region'">
+      <div class="text-block up-position">
+        <span>בחרו את אזורי הבילוי המועדפים עליכם</span>
+      </div>
+      <ion-list class="region">
+        <ion-item class="region-item" *ngFor="let business of businessCategory">
+          <ion-checkbox [(ngModel)]="business.checked"></ion-checkbox>
+          <ion-label>{{business.name}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div class="text-block up-position" *ngIf="regions && state === 'third' || regions && state === 'region'">
+      <span>סמנו את הקטגוריות שמעניינות אתכם ואנחנו נתאים לכם את המקומות הבילוי</span>
+    </div>
+    <ion-list class="region" *ngIf="regions && state === 'third' || regions && state === 'region'">
+      <ion-item class="region-item" *ngFor="let region of regions">
+        <ion-checkbox [(ngModel)]="region.checked"></ion-checkbox>
+        <ion-label>{{region.name}}</ion-label>
+      </ion-item>
+    </ion-list>
+
+  </div>
+
+  <div class="button-block">
+    <p class="to-region" (click)="toRegion()" *ngIf="state === 'settings' ">
+      הגדרות חיפוש
+      <img src="assets/icon/edit-blue.png">
+    </p>
+    <button (click)="saveUser()">
+      <p *ngIf="state != 'settings' && state !='region'">{{'auth.btn-next' | translate}}</p>
+      <p *ngIf="state === 'settings' || state === 'region'">שמירה</p>
+    </button>
+  </div>
+
+</ion-content>

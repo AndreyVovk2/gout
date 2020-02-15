@@ -1,0 +1,123 @@
+page-my-posts {
+  .post-list {
+    display: block;
+    width: 100%;
+    height: 93vh;
+    overflow: scroll;
+    margin-bottom: 2vw;
+    position: relative;
+  }
+  .post-block {
+    display: flex;
+    position: relative;
+    align-items: center;
+    width: 100%;
+    height: 30vw;
+    background-image: linear-gradient(to top, rgba(108, 82, 100, 0.7) 0%, rgba(0, 0, 0, 0.31) 100%);
+    border-bottom: color($colors,'border') 2px solid;
+    margin: 2vw 0;
+    padding: 2vw 0;
+    .creator-avatar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 15vw;
+      height: 15vw;
+      border-radius: 50%;
+      position: absolute;
+      left: 3vw;
+      top: 3vw;
+      img{
+        border-radius: 50%;
+        border: 2px solid #513b4a;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .text-block{
+      display: flex;
+      position: relative;
+      justify-content: flex-start;
+      flex-direction: column;
+      width: 55vw;
+      height: 100%;
+      text-align: left;
+      p{
+        color:white;
+        text-decoration: none;
+        text-align: right;
+        font-family: 'Rubik';
+      }
+      .title{
+        font-weight: 700;
+        font-size: 5vw;
+        max-width: 40vw;
+        margin-left: 25vw;
+        text-align: right;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .creator-name {
+        margin-left: 25vw;
+        font-weight: 400;
+        font-size: 4vw;
+        max-width: 40vw;
+      }
+      .date-create,.people{
+        margin-top: 5vw;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: row;
+        position: relative;
+        .up-text {
+          color: #6c5264;
+          font-weight: 800;
+          font-family: 'Rubik';
+          font-size: 4vw;
+        }
+        img{
+          position: relative;
+          width: 7.5vw;
+          height: 6.5vw;
+          right: 0;
+          bottom: -1vw;
+        }
+        p{
+          text-align: right;
+
+        }
+        span{
+          padding: 0;
+          margin: 0;
+          margin-left: 10px;
+          border: 0;
+        }
+      }
+    }
+    .photo{
+      position: absolute;
+      height: 100%;
+      width: 40vw;
+      right: 2vw;
+      border: 3px solid #513b4a;
+      img{
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+  .add-button{
+    position: absolute;
+    margin: 0 auto;
+    bottom: 5vw;
+    left: 0;
+    right: 0;
+    width: 10vw;
+    height: 10vw;
+  }
+  .edit-post {
+    width: 5vw!important;
+    height: 5vw!important;
+  }
+}

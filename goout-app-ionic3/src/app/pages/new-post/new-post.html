@@ -1,0 +1,121 @@
+<ion-header>
+  <custom-header [title]="title"></custom-header>
+</ion-header>
+<ion-content>
+  <custom-photo [picture]="picture" (changePhoto)="getPhoto($event)"></custom-photo>
+  <div class="info-block">
+    <div class="name">
+      <ion-input dir="rtl" type="text" [(ngModel)]="line.title" maxlength="25"></ion-input>
+      <p class="inscription-long inscription">{{'new-line.title' | translate}}</p>
+    </div>
+    <div class="two-input-block">
+      <div class="two-input-item">
+        <img class="right-icon" src="assets/icon/clock-create-icon.png">
+        <ion-datetime  displayFormat="HH:mm" pickerFormat="HH mm" [(ngModel)]="line.time"></ion-datetime>
+        <p class="inscription">{{'new-line.time' | translate}}\</p>
+      </div>
+      <div class="two-input-item">
+        <img class="right-icon" src="assets/icon/calendar.png">
+        <ion-datetime displayFormat="DD.MM.YYYY" pickerFormat="DD.MMMM.YYYY" max="{{maxDate}}" min="{{minDate}}"
+                      [monthNames]="customMonthName" [(ngModel)]="line.created_at"
+                      cancelText="{{'date-picker.cancel' | translate}}"
+                      doneText="{{'date-picker.done' | translate}}"></ion-datetime>
+        <p class="inscription">{{'new-line.calendar' | translate}}</p>
+      </div>
+    </div>
+    <div class="two-input-block">
+      <div class="two-input-item">
+        <img class="arrow-select" src="assets/icon/arrow-bottom.png">
+        <ion-item dir="rtl">
+          <ion-select [selectOptions]="leftOptions" [(ngModel)]="line.girl_age_id" interface="popover">
+            <ion-option *ngFor="let elem of femaleArray" value="{{elem.id}}">{{elem.age}}</ion-option>
+          </ion-select>
+        </ion-item>
+        <img class="gender gender-female" src="assets/icon/female-main.png">
+        <p class="inscription">{{'new-line.female' | translate}}</p>
+      </div>
+      <div class="two-input-item">
+        <img class="arrow-select" src="assets/icon/arrow-bottom.png">
+        <ion-item dir="rtl">
+          <ion-select [selectOptions]="rightOptions" [(ngModel)]="line.boy_age_id" interface="popover">
+            <ion-option *ngFor="let elem of maleArray" value="{{elem.id}}">{{elem.age}}</ion-option>
+          </ion-select>
+        </ion-item>
+        <img class="gender" src="assets/icon/male-main.png">
+        <p class="inscription">{{'new-line.male' | translate}}</p>
+      </div>
+    </div>
+    <div class="name">
+      <ion-input dir="rtl" type="text" [(ngModel)]="post.titlee" maxlength="25"></ion-input>
+      <p class="inscription-long inscription">{{'new-post.title' | translate}}</p>
+
+    </div>
+    <div class="description">
+      <p class="up-text">{{'new-post.description' | translate}}</p>
+      <textarea  class="description-item" maxlength="150" [(ngModel)]="post.description" dir="rtl">
+      </textarea>
+      <p class="count">150/{{post.description.length}}</p>
+    </div>
+  </div>
+  <div class="add-photo" *ngIf="!gallery.length">
+    <img src="assets/icon/default-path.png">
+    <button (click)="addGallery()">
+      {{'new-post.add' | translate}}
+    </button>
+  </div>
+  <ion-slides class="gallery" effect="coverflow" centeredSlides="true" slidesPerView="3" *ngIf="gallery.length">
+    <ion-slide *ngFor="let img of gallery">
+      <img [src]="img">
+    </ion-slide>
+  </ion-slides>
+  <button class="gallery-button" (click)="addGallery()" *ngIf="gallery.length">
+    {{'new-post.add' | translate}}
+  </button>
+  <div class="two-input-block margin-block">
+    <div class="two-input-item">
+      <ion-label class="price-view">₪</ion-label>
+      <ion-input type="number"
+                 maxlength="10"
+                 [disabled]="modeChecked"
+                 [brmasker]="{mask: '00000', len: 5, type: 'num'}"
+                 [(ngModel)]="post.price_tickets"
+      ></ion-input>
+      <p class="inscription">{{'new-post.price' | translate}}</p>
+    </div>
+    <div class="two-input-item">
+      <ion-input type="number"
+                 maxlength="10"
+                 [disabled]="modeChecked"
+                 [brmasker]="{mask: '00000', len: 5, type: 'num'}"
+                 [(ngModel)]="post.amount_tickets"
+      ></ion-input>
+      <p class="inscription">{{'new-post.amount' | translate}}</p>
+    </div>
+  </div>
+  <div class="mode-block">
+    <div class="up-text">{{'new-post.up-text-free' | translate}}</div>
+    <div class="mode-item">
+      <p class="name">{{'new-post.free' | translate}}</p>
+      <ion-checkbox class="check" [(ngModel)]="modeChecked"></ion-checkbox>
+    </div>
+    <!--<div class="down-text">{{'new-post.down-text-free' | translate}}</div>-->
+    <div class="radio-block" *ngIf="modeChecked">
+      <div class="radio-item" (click)="changeMode('throughInvite')" [ngClass]="{'active': classThroughInvite(mode)}">
+        <p>{{'new-post.invite' | translate}}</p>
+      </div>
+      <div class="radio-item" (click)="changeMode('fromAge')" [ngClass]="{'active': classFromAge(mode)}">
+        <p>{{'new-post.fromAge' | translate}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="buttons-block">
+    <button class="button" *ngIf="state === 'create'" (click)="createPost('menu')">
+      <img src="assets/icon/send.png">
+      <p>{{'new-post.send' | translate}}</p>
+    </button>
+    <button class="button" *ngIf="state === 'edit'" (click)="updatePost()">
+      <img src="assets/icon/send.png">
+      <p>{{'new-post.update' | translate}}</p>
+    </button>
+  </div>
+</ion-content>

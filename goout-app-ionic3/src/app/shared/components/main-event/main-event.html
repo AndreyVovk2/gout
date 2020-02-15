@@ -1,0 +1,61 @@
+<div class="event">
+  <div class="event-photo">
+    <img *ngIf="event.picture !== null" [src]="event.picture">
+    <img *ngIf="event.picture === null" [src]="event.line.avatar">
+  </div>
+  <div class="info-block">
+    <div class="owner-info" [ngStyle]="{'background': changeStyle(event.favorite)}">
+      <div class="favorites-icon">
+        <img src="assets/icon/favorite-off.png" (click)="addFavorite()" *ngIf="!event.favorite">
+        <img src="assets/icon/favorite-on.png" (click)="addFavorite()" *ngIf="event.favorite">
+      </div>
+      <div class="about-owner">
+        <p class="up-text">{{event.creator.name}} {{event.creator.lastname}}</p>
+        <div class="down-text">
+          <p class="event-name">{{event.business.name}}</p>
+        </div>
+      </div>
+      <div class="avatar-owner">
+        <img [src]="event.creator.avatar_src">
+      </div>
+    </div>
+    <div class="event-description">
+      <div class="event-block">
+        <div class="event-text" dir="rtl">
+          <p class="title">{{event.title}}</p>
+          <p class="descr">{{event.description}}</p>
+        </div>
+        <div class="border-line"></div>
+      </div>
+      <div class="date">
+          <div class="date-text">
+            <p class="up-text">{{'main.main-event.time' | translate}}</p>
+            <p class="time">{{event.time}} <span>{{event.date}}</span></p>
+          </div>
+          <div class="date-icon">
+            <img src="assets/icon/clock-create-icon.png">
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="to-event" (click)="openDetails(event)">
+      <img src="assets/icon/to-event.png">
+      <p class="to-event-text">{{'main.main-event.details' | translate}}</p>
+    </div>
+    <div class="gender-block">
+      <div class="female">
+        <img src="assets/icon/female-main.png">
+        <p>{{event.line.girl_age_id}}</p>
+      </div>
+      <div class="male">
+        <img src="assets/icon/male-main.png">
+        <p>{{event.line.boy_age_id}}</p>
+      </div>
+    </div>
+    <div class="some-text"><p>{{'main.main-event.people' | translate}}</p></div>
+    <div class="neon">
+      <img src="assets/imgs/neon_border.png">
+    </div>
+  </div>
+</div>

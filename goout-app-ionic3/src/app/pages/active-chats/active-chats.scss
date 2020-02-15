@@ -1,0 +1,107 @@
+page-active-chats {
+  .user-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 15vw;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-bottom: 1px solid color($colors, border);
+    margin-top: 10px;
+
+    .avatar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 15vw;
+      height: 100%;
+
+      img {
+        width: 80%;
+        height: 80%;
+        border-radius: 50%;
+      }
+
+      .online {
+        display: block;
+        position: absolute;
+        right: 1vw;
+        width: 1.5vw;
+        top: 4vw;
+        height: 1.5vw;
+        background-color: #f82c53;
+        border-radius: 50%;
+      }
+    }
+
+    .chat-info {
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+      color: white;
+      width: 60vw;
+      font-size: 3.5vw;
+
+      .last-message {
+        font-weight: 100;
+        font-size: 3vw;
+        max-width: 100%;
+      }
+    }
+
+    .time-block {
+      width: 15vw;
+      height: 100%;
+      color: white;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+
+      .not-checked {
+        position: relative;
+
+        p {
+          position: absolute;
+          bottom: 1vw;
+          left: 1.5vw;
+        }
+      }
+
+      .checked-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 5vw;
+        height: 5vw;
+        margin-left: 20px;
+      }
+    }
+  }
+
+  .background-chat {
+    height: 30px;
+    background-color: #007afe;
+    display: flex;
+    justify-content: center;
+    width: 93vw;
+    margin-left: 3vw;
+    border-radius: 7px;
+
+    .search-chat {
+      display: flex;
+      justify-content: center;
+
+      .serach-input {
+        width: 77vw;
+        margin-top: 3px
+      }
+
+
+      .icon-search {
+        color: white;
+        margin-right: 10px;
+      }
+    }
+  }
+}

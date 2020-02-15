@@ -1,0 +1,22 @@
+<ion-header>
+  <custom-header [title]="headerTitle"></custom-header>
+</ion-header>
+<ion-content>
+  <div class="wrapper">
+    <ion-list class="menu-list">
+      <ion-item (click)="toDish(category.id,category.photo)"
+                class="menu-item" *ngFor="let category of menuCategories"
+                [ngStyle]="{'background-image': 'url(' + category.photo + ')'}">
+        <div class="name">
+          <p>{{category.name}}</p>
+        </div>
+      </ion-item>
+      <ion-item class="menu-item add-block" *ngIf="state != 'show'">
+        <button (click)="addCategoryMenu()">
+          <ion-icon name="add"></ion-icon>
+          {{'menu-list.create' | translate}}
+        </button>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

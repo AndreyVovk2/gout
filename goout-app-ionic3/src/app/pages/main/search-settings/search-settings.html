@@ -1,0 +1,97 @@
+<div class="main-wrap" tappable  (click)="closePop($event)">
+  <div class="search-header">
+    <div class="icon">
+      <img src="assets/icon/search.png">
+    </div>
+    <div class="title">
+      <p>{{'search-setting.search' | translate}}</p>
+    </div>
+    <div class="icon" (click)="close()">
+      <img src="assets/icon/close.png">
+    </div>
+  </div>
+
+  <div class="range-block">
+    <ion-range min="1" [(ngModel)]="distance" pin="true">
+    </ion-range>
+  </div>
+
+  <div class="checkbox-block">
+    <div class="title">
+      <p>{{'search-setting.range' | translate}}</p>
+    </div>
+    <div class="checkbox-text">
+      <p class="text">{{'search-setting.checkbox-title' | translate}}</p>
+      <div class="border"></div>
+    </div>
+    <div class="checkbox-scroll-block">
+      <ion-item class="checkbox-item" *ngFor="let region of regions">
+        <ion-checkbox [(ngModel)]="region.checked"></ion-checkbox>
+        <ion-label>{{region.name}}</ion-label>
+      </ion-item>
+    </div>
+  </div>
+
+  <div class="info-block">
+    <div class="two-input-block">
+      <div class="two-input-item">
+        <img class="arrow-select" src="assets/icon/arrow-bottom.png">
+        <ion-item class="popup-block" dir="rtl" (click)="showPopup('subBusinessCategory', $event)">
+         <p class="input">{{selectSubCategory}}</p>
+        </ion-item>
+        <div class="popup-select" *ngIf="popups.subBusinessCategory">
+          <p class="popup-item" *ngFor="let subCategory of filterForCategories" (click)="getPopupData(subCategory,'subCategory',$event)">
+            {{subCategory.name}}
+          </p>
+        </div>
+        <div class="inscription">{{'search-setting.category' | translate}}</div>
+      </div>
+      <div class="two-input-item">
+        <img class="arrow-select" src="assets/icon/arrow-bottom.png">
+        <ion-item class="popup-block" dir="rtl" (click)="showPopup('businessCategory', $event)">
+          <p class="input" >{{selectCategory}}</p>
+        </ion-item>
+        <div class="popup-select" *ngIf="popups.businessCategory">
+          <p class="popup-item" *ngFor="let category of businessCategory" (click)="getPopupData(category,'category',$event)">
+            {{category.name}}
+          </p>
+        </div>
+        <div class="inscription">{{'search-setting.type' | translate}}</div>
+      </div>
+    </div>
+    <div class="second-block">
+      <p>{{'search-setting.age-range' | translate}}</p>
+      <div class="border"></div>
+    </div>
+    <div class="two-input-block">
+      <div class="two-input-item">
+        <img class="arrow-select" src="assets/icon/arrow-bottom.png">
+        <ion-item class="popup-block" dir="rtl" (click)="showPopup('maleAge', $event)">
+          <p class="input">{{selectMale}}</p>
+        </ion-item>
+        <div class="popup-select" *ngIf="popups.maleAge">
+          <p class="popup-item" *ngFor="let age of maleArray" (click)="getPopupData(age,'maleAge',$event)">
+            {{age.age}}
+          </p>
+        </div>
+        <div class="inscription">{{'search-setting.boys-age' | translate}}</div>
+      </div>
+      <div class="two-input-item">
+        <img class="arrow-select" src="assets/icon/arrow-bottom.png">
+        <ion-item class="popup-block" dir="rtl" (click)="showPopup('femaleAge', $event)">
+          <p class="input">{{selectFemale}}</p>
+        </ion-item>
+        <div class="popup-select" *ngIf="popups.femaleAge">
+          <p class="popup-item" *ngFor="let age of femaleArray" (click)="getPopupData(age,'femaleAge',$event)">
+            {{age.age}}
+          </p>
+        </div>
+        <div class="inscription">{{'search-setting.girls-age' | translate}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="button-block">
+    <button ion-button
+            (click)="searchPosts()">{{'search-setting.search-post' | translate}}</button>
+  </div>
+</div>

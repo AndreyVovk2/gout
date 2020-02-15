@@ -1,0 +1,56 @@
+<ion-header>
+  <custom-header [title]="'Create Dish'"></custom-header>
+</ion-header>
+
+<ion-content>
+  <div class="photo-category" [ngStyle]="{'background-image': 'url(' + menuCategory.photo + ')'}">
+  </div>
+  <div class="wrapper" *ngIf="dishList.length">
+    <div class="dish-info" *ngFor="let dish of dishList">
+      <div class="dish-info-item">
+        <div class="price"><p class="price-label price-icon">₪</p>
+          <p class="price-item">{{dish.price}}</p></div>
+        <div class="title">{{dish.name}}</div>
+      </div>
+      <div class="dish-info-item">
+        <div class="description-info">{{dish.description}}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="new-dish" *ngIf="state != 'show'">
+    <div class="two-input-block">
+      <div class="two-input-item">
+        <ion-label class="price-label">₪</ion-label>
+        <ion-input class="first"
+                   type="tel"
+                   dir="rtl"
+                   [(ngModel)]="dishCreate.price"
+                   [brmasker]="{mask: '000000', len: 6, type: 'num'}"
+        ></ion-input>
+      </div>
+      <div class="two-input-item">
+        <ion-input dir="rtl"
+                   class="second"
+                   maxlength="20"
+                   type="text"
+                   [(ngModel)]="dishCreate.name"
+        ></ion-input>
+      </div>
+    </div>
+    <div class="new-description">
+      <p class="up-text">{{'new-post.description' | translate}}</p>
+      <textarea class="description-item" maxlength="150" [(ngModel)]="dishCreate.description" dir="rtl">
+      </textarea>
+      <p class="count">150/{{dishCreate.description.length}}</p>
+    </div>
+  </div>
+
+  <div class="button-block" *ngIf="state != 'show'">
+    <div class="add-button">
+      <img src="assets/icon/add-button.png" (click)="addDish()">
+    </div>
+    <button (click)="createDish()">{{'menu-item.create' | translate}}</button>
+  </div>
+
+</ion-content>

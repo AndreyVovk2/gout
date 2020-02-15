@@ -1,0 +1,177 @@
+{
+  "auth": {
+    "btn-next": "הבא",
+    "registration-text": "אנא הזינו את מספר הטלפון",
+    "verify-text-1": " קוד האימות נשלח אל",
+    "verify-text-2": "לא קיבלת?",
+    "back": " שלח שוב",
+    "facebook-button": "Facebook",
+    "login-with": "התחברות באמצעות"
+  },
+  "chat": {
+    "header": "הודעות"
+  },
+
+  "friends": {
+    "title-friend": "איפה חברים שלי מבלים",
+    "title-blogger": "הוספת מארחת",
+    "title-hostess": "הוספת מארחת",
+    "title-phone": "פרסום ליין חדש",
+    "all-friend": "כל החברים",
+    "confirm": "אשרו הגעה",
+    "party-now": "עכשיו",
+    "no-friend": "אין חברים ברשימה",
+    "load": "טוען רשימה",
+    "send-invitations": "שלח הזמנות",
+    "invite": "להזמין",
+    "select-all": "בחר הכל",
+    "cancel-all": "בטל הכל",
+    "send-contact": "הזמנה נשלחה",
+    "no-selected": "לא נבחרו אנשי קשר"
+  },
+  "info": {
+    "terms-of-use": "תנאי שימוש ומדיניות פרטיות",
+    "about": "אודות"
+  },
+  "main": {
+    "main-event": {
+      "time": "פתיחת דלתות",
+      "details": "פרטים נוספים",
+      "people": "מבלים כרגע"
+    }
+  },
+  "my-business": {
+  },
+  "my-lines": {
+    "title": "עריכת אירוע",
+    "edit": "עדכן"
+  },
+  "new-line": {
+    "header": "פרסום אירוע חדש",
+    "edit": "עריכת פוסט",
+    "title": "שם הליין",
+    "calendar": "תאריך המסיבה",
+    "time": "שעת ההתחלה",
+    "female": "טווח גילאים בנות",
+    "male": "טווח גילאים בנים",
+    "create": "צור"
+  },
+  "profile": {
+    "name": "שם",
+    "lastname": "שם משפחה",
+    "email": "מייל",
+    "birthday": "יום הולדת"
+  },
+  "menu-right": {
+    "new-business": "פתיחת עסק ",
+    "my-business": " פתיחת עסק",
+    "my-events": "מארחתי",
+    "attached-business": "יחצן",
+    "my-privacy-events": "האירועים שלי",
+    "favorite": "מועדפים",
+    "about": "אודות",
+    "contact-us": "יצירת קשר",
+    "rating-us": " דרגו אותנו",
+    "terms-of-use": "תנאי שימוש ומדיניות פרטיות"
+  },
+  "add-business": {
+    "title": "שם העסק",
+    "location": "כתובת העסק",
+    "category-business": "קטגוריה",
+    "sub-business-category": "סוג העסק",
+    "menu": "יצירת תפריט",
+    "create": "הבא",
+    "update": "עדכן",
+    "show-menu": "הראה תפריט",
+    "hostess": "הוספת מארחת",
+    "blogger": "הוספת יחצ\"ן"
+  },
+  "new-post": {
+    "title": "שם האירוע",
+    "description": "תיאור",
+    "add": "הוסף +",
+    "amount": "כמות כרטיסים",
+    "price": "מחיר לכרטיס",
+    "send": "פרסם ושלח הזמנות",
+    "update": "ערוך פוסט",
+    "free": "כניסה בחינם",
+    "fromAge": "from 17",
+    "invite": "שלח הזמנה",
+    "up-text-free": "או",
+    "down-text-free": "some"
+  },
+  "event-details": {
+    "time": "פתיחת דלתות",
+    "count": "ממש כרטיסים",
+    "people": "מבלים כרגע",
+    "invite": "הזמן חברים",
+    "guests": "התווסף לרשימה",
+    "buy": "קנית כרטיסים",
+    "menu": "הראה תפריט",
+    "notificationAll": "שלח תזכורת לכולם",
+    "notification": "הזמנת מקום",
+    "inviteList": "רשימת מוזמנים",
+    "modal": {
+      "title": "ביחרו את כמות הכרטיסים הרצוי",
+      "price": " מחיר לכרטיס",
+      "total-price": "סה״כ לתשלום",
+      "buy": "לתשלום",
+      "friends": "הזמן חברים",
+      "invite": "הזמן",
+      "facebook": "באמצעות פייסבוק",
+      "phone": "באמצעות אנשי קשר"
+    }
+  },
+  "notifications": {
+    "btnText": "הבא",
+    "accessText": "הנני מאשר",
+    "header": "פתיחת עסק חדש"
+  },
+  "menu-list": {
+    "create": "הוסף",
+    "title": "תפריט"
+  },
+  "menu-item": {
+    "title": "שם המנה",
+    "create": "שמירה",
+    "header": "עריכת תפריט"
+  },
+  "search-setting": {
+    "search": "סינון",
+    "range": "לפי מרחק",
+    "checkbox-title": "אזור בילוי",
+    "type": "סוג בילוי",
+    "category": "קטגוריה",
+    "age-range": "טווח גילאים",
+    "boys-age": " בנים",
+    "girls-age": "בנות",
+    "search-post": "חיפוש"
+  },
+  "photo": {
+    "gallery": "גלריה",
+    "camera": "מצלמה"
+  },
+  "date-picker": {
+    "done": "בוצע",
+    "cancel": "ביטול"
+  },
+  "favorites": {
+    "header": "מועדפים"
+  },
+  "errors": {
+    "new-post": {
+      "title": "Title err",
+      "description": "Description err",
+      "amount_tickets": "אנא הכנס כמות כרטיסים",
+      "price_tickets": "אנא הכנס מחיר כרטיסים",
+      "canceled": "שליחת ההזמנה בוטלה",
+      "facebook": "Posted on facebook"
+    },
+    "search": {
+      "region": "חובה לציין אזור חיפוש",
+      "business": "אנא בחר עסק",
+      "sub_business": "בחר עסק משנה",
+      "empty": "שום דבר לא נמצא"
+    }
+  }
+}
